@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Colégio Reação | Atendimento WhatsApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'reacao-red': '#c40014',
+                        'reacao-blue': '#0033a0',
+                        'reacao-light-blue': '#e6efff',
+                        'reacao-dark-blue': '#002366',
+                        'whatsapp-green': '#25D366',
+                        'whatsapp-light': '#dcf8c6',
+                        'whatsapp-dark': '#075E54'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+        
+        .chat-container {
+            height: calc(100vh - 140px);
+        }
+        
+        .message-bubble {
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        
+        .typing-indicator {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            background-color: #f0f0f0;
+            border-radius: 18px;
+        }
+        
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #999;
+            margin: 0 2px;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) { animation-delay: 0s; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+        
+        .option-button {
+            transition: all 0.2s ease;
+        }
+        
+        .option-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .phone-button {
+            background-color: #25D366;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 8px;
+            transition: all 0.2s ease;
+        }
+        
+        .phone-button:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <a href="index.html"><img src="img/LOGO-REAÇÃO-PNG-CONTORNO-BRANCO.png" width="150px"></a>
+                </div>
+                
+                <a href="index.html" class="text-reacao-blue hover:text-reacao-red transition-colors font-medium">
+                    Voltar ao Site
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Chat Container -->
+    <div class="container mx-auto px-4 py-6">
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <!-- Chat Header -->
+            <div class="bg-whatsapp-dark text-white p-4 flex items-center">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center mr-3 shadow-md">
+                    <img src="img/mika.png">
+                </div>
+                <div class="flex-1">
+                    <h2 class="font-bold text-lg">MILA</h2>
+                    <div class="text-xs flex items-center">
+                        <span class="w-2 h-2 bg-green-400 rounded-full mr-1"></span>
+                        <span>Online</span>
+                    </div>
+                </div>
+                <div class="flex space-x-3">
+                    <button class="text-white hover:text-gray-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <button class="text-white hover:text-gray-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Chat Messages -->
+            <div id="chat-messages" class="chat-container p-4 bg-gray-100 overflow-y-auto">
+                <!-- Messages will be dynamically added here -->
+            </div>
+            
+            <!-- Chat Input -->
+            <div class="bg-white p-4 border-t border-gray-200">
+                <div class="flex items-center">
+                    <button class="text-gray-500 hover:text-gray-700 p-2 rounded-full transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+                        </svg>
+                    </button>
+                    <input type="text" id="chat-input" placeholder="Digite uma mensagem" class="flex-1 mx-2 p-3 border border-gray-300 rounded-full focus:outline-none focus:border-reacao-blue transition-colors">
+                    <button id="chat-send" class="bg-whatsapp-green text-white p-3 rounded-full hover:bg-green-500 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Chatbot Flow
+        const chatbotFlow = {
+            start: {
+                message: "Olá! Seja bem vindo(a). Meu nome é Mila sou assistente virtual do Colégio Reação! Como posso ajudar você hoje?",
+                options: [
+                    { text: "Matrículas 2026", next: "matriculas" },
+                    { text: "Conhecer as unidades", next: "unidades" },
+                    { text: "Agendar uma visita", next: "visita" },
+
+                ]
+            },
+            matriculas: {
+                message: "Excelente! As matrículas para 2026 estão abertas. Posso te ajudar com:",
+                options: [
+                    { text: "Processo de matrícula", next: "processo_matricula" },
+                    { text: "Documentação necessária", next: "documentacao" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            unidades: {
+                message: "Temos duas unidades no Recanto das Emas. Qual você gostaria de conhecer?",
+                options: [
+                    { text: "Unidade I - Quadra 206", next: "unidade_i" },
+                    { text: "Unidade II - Quadra 201", next: "unidade_ii" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            unidade_i: {
+                message: "A Unidade I fica na Quadra 206 do Recanto das Emas e atende da Educação Infantil aos Anos Finais do Ensino Fundamental. Oferecemos estrutura completa com laboratórios, biblioteca, quadras esportivas e muito mais!",
+                options: [
+                    { text: "Agendar visita na Unidade I", next: "agendar_i" },
+                    { text: "Telefone da Unidade I", next: "telefone_i" },
+                    { text: "Falar sobre matrículas", next: "matriculas" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            unidade_ii: {
+                message: "A Unidade II fica na Quadra 201 do Recanto das Emas e atende da Educação Infantil ao Ensino Médio. Oferecemos estrutura completa com laboratórios, biblioteca, quadras esportivas e muito mais! .",
+                options: [
+                    { text: "Agendar visita na Unidade II", next: "agendar_ii" },
+                    { text: "Telefone da Unidade II", next: "telefone_ii" },
+                    { text: "Falar sobre matrículas", next: "matriculas" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            telefone_i: {
+                message: "O telefone da Unidade I (Quadra 206) é (61) 3333-1434. Clique no botão abaixo para ligar agora:",
+                options: [
+                    { text: "Ligar para Unidade I", next: "call_i" },
+                    { text: "Agendar visita", next: "agendar_i" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            telefone_ii: {
+                message: "O telefone da Unidade II (Quadra 201) é (61) 3333-3332. Clique no botão abaixo para ligar agora:",
+                options: [
+                    { text: "Ligar para Unidade II", next: "call_ii" },
+                    { text: "Agendar visita", next: "agendar_ii" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            call_i: {
+                message: "Redirecionando para o telefone da Unidade I...",
+                action: "tel:6133331434",
+                options: [
+                    { text: "Agendar visita", next: "agendar_i" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            call_ii: {
+                message: "Redirecionando para o telefone da Unidade II...",
+                action: "tel:6133333332",
+                options: [
+                    { text: "Agendar visita", next: "agendar_ii" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            visita: {
+                message: "Que bom que você quer nos visitar! Para qual unidade gostaria de agendar?",
+                options: [
+                    { text: "Unidade I - Quadra 206", next: "agendar_i" },
+                    { text: "Unidade II - Quadra 201", next: "agendar_ii" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            agendar_i: {
+                message: "Perfeito! Para agendar uma visita na Unidade I (Quadra 206), você pode:\n\n1. Ligar para (61) 3333-1434\n2. Preencher o formulário de contato no site\n3. Enviar uma mensagem aqui com seu nome e telefone que entraremos em contato",
+                options: [
+                    { text: "Enviar meus dados para contato", next: "contato_i" },
+                    { text: "Ligar agora", next: "call_i" },
+                    { text: "Ver outras opções", next: "start" }
+                ]
+            },
+            agendar_ii: {
+                message: "Perfeito! Para agendar uma visita na Unidade II (Quadra 201), você pode:\n\n1. Ligar para (61) 3333-3332\n2. Preencher o formulário de contato no site\n3. Enviar uma mensagem aqui com seu nome e telefone que entraremos em contato",
+                options: [
+                    { text: "Enviar meus dados para contato", next: "contato_ii" },
+                    { text: "Ligar agora", next: "call_ii" },
+                    { text: "Ver outras opções", next: "start" }
+                ]
+            },
+            contato_i: {
+                message: "Por favor, digite seu nome e telefone que nossa equipe entrará em contato para agendar sua visita na Unidade I:",
+                input: true,
+                next: "confirmacao_i"
+            },
+            contato_ii: {
+                message: "Por favor, digite seu nome e telefone que nossa equipe entrará em contato para agendar sua visita na Unidade II:",
+                input: true,
+                next: "confirmacao_ii"
+            },
+            confirmacao_i: {
+                message: "Obrigado! Sua solicitação para a Unidade I foi registrada. Nossa equipe entrará em contato em até 24 horas. Enquanto isso, posso ajudar com mais alguma coisa?",
+                options: [
+                    { text: "Conhecer mais sobre o colégio", next: "sobre" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            confirmacao_ii: {
+                message: "Obrigado! Sua solicitação para a Unidade II foi registrada. Nossa equipe entrará em contato em até 24 horas. Enquanto isso, posso ajudar com mais alguma coisa?",
+                options: [
+                    { text: "Conhecer mais sobre o colégio", next: "sobre" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            processo_matricula: {
+                message: "O processo de matrícula inclui:\n\n1. Agendamento de visita\n2. Entrevista com coordenação\n3. Avaliação diagnóstica (quando aplicável)\n4. Apresentação da proposta pedagógica\n5. Formalização da matrícula\n\nGostaria de agendar uma visita?",
+                options: [
+                    { text: "Sim, agendar visita", next: "visita" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            valores: {
+                message: "Temos condições especiais para 2026, incluindo:\n\n• Desconto para irmãos\n• Programa de bolsas de estudo\n• Condições especiais para transferências\n\nPara informações detalhadas sobre valores, entre em contato conosco: (61) 3333-1434 (Unidade I) ou (61) 3333-3332 (Unidade II)",
+                options: [
+                    { text: "Agendar visita", next: "visita" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            documentacao: {
+                message: "Para a matrícula, você precisará de:\n\n• 02 foto 3x4 (atualizadas);\n• Cópia da certidão de nascimento;\n• CPF do aluno;\n• Cópia do cartão de vacina;\n• Cópia do CPF e identidade do responsável;\n• Cópia da identidade do aluno(Ensino Médio);\n• Comprovante do tipo sanguíneo;\n• Declaração de transferência e histórico escolar.",
+                options: [
+                    { text: "Processo de matrícula", next: "processo_matricula" },
+                    { text: "Agendar visita", next: "visita" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            sobre: {
+                message: "O Colégio Reação tem mais de 20 anos de tradição em educação, com metodologia inovadora que combina excelência acadêmica com desenvolvimento humano. Oferecemos Educação Infantil ao Ensino Médio com infraestrutura completa e professores qualificados.",
+                options: [
+                    { text: "Conhecer unidades", next: "unidades" },
+                    { text: "Matrículas 2026", next: "matriculas" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            atendente: {
+                message: "Para falar com um de nossos atendentes, você pode:\n\n• Ligar para (61) 3333-1434 (Unidade I)\n• Ligar para (61) 3333-3332 (Unidade II)\n\nPosso ajudar com mais alguma coisa?",
+                options: [
+                    { text: "Matrículas 2026", next: "matriculas" },
+                    { text: "Conhecer unidades", next: "unidades" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            }
+        };
+        
+        // DOM Elements
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const chatSend = document.getElementById('chat-send');
+        
+        // Chat State
+        let currentStep = "start";
+        let awaitingInput = false;
+        let inputStep = "";
+        
+        // Add message to chat
+        function addMessage(message, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `mb-4 fade-in ${isUser ? 'text-right' : ''}`;
+            
+            const bubble = document.createElement('div');
+            bubble.className = `rounded-2xl p-3 message-bubble inline-block ${isUser ? 'bg-whatsapp-green text-white' : 'bg-white text-gray-800 shadow-sm'}`;
+            
+            // Format message with line breaks
+            const formattedMessage = message.replace(/\n/g, '<br>');
+            bubble.innerHTML = `<p>${formattedMessage}</p>`;
+            
+            messageDiv.appendChild(bubble);
+            
+            // Add time
+            const time = document.createElement('p');
+            time.className = `text-xs text-gray-500 mt-1 ${isUser ? 'text-right' : ''}`;
+            const now = new Date();
+            time.textContent = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            
+            messageDiv.appendChild(time);
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // Show typing indicator
+        function showTypingIndicator() {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'mb-4 fade-in';
+            
+            const bubble = document.createElement('div');
+            bubble.className = 'rounded-2xl p-3 message-bubble inline-block bg-white shadow-sm';
+            
+            const typingIndicator = document.createElement('div');
+            typingIndicator.className = 'typing-indicator';
+            
+            for (let i = 0; i < 3; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'typing-dot';
+                typingIndicator.appendChild(dot);
+            }
+            
+            bubble.appendChild(typingIndicator);
+            messageDiv.appendChild(bubble);
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            return messageDiv;
+        }
+        
+        // Show options
+        function showOptions(step) {
+            const options = chatbotFlow[step].options;
+            if (options) {
+                // Remove typing indicator if exists
+                const typingIndicator = document.querySelector('.typing-indicator');
+                if (typingIndicator) {
+                    typingIndicator.parentElement.parentElement.remove();
+                }
+                
+                // Add message
+                addMessage(chatbotFlow[step].message);
+                
+                // Add options
+                setTimeout(() => {
+                    const optionsContainer = document.createElement('div');
+                    optionsContainer.className = 'mb-4 fade-in';
+                    
+                    options.forEach(option => {
+                        const optionButton = document.createElement('button');
+                        optionButton.className = 'block w-full text-left p-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors option-button mb-2 shadow-sm';
+                        optionButton.textContent = option.text;
+                        optionButton.setAttribute('data-next', option.next);
+                        
+                        optionButton.addEventListener('click', function() {
+                            const nextStep = this.getAttribute('data-next');
+                            addMessage(this.textContent, true);
+                            currentStep = nextStep;
+                            
+                            // Check if this step has an action (like calling)
+                            if (chatbotFlow[nextStep] && chatbotFlow[nextStep].action) {
+                                // Execute the action (like opening phone dialer)
+                                window.location.href = chatbotFlow[nextStep].action;
+                                // Continue with the flow after a delay
+                                setTimeout(() => {
+                                    showStep(nextStep);
+                                }, 1000);
+                            } else {
+                                showStep(nextStep);
+                            }
+                        });
+                        
+                        optionsContainer.appendChild(optionButton);
+                    });
+                    
+                    chatMessages.appendChild(optionsContainer);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 500);
+            }
+        }
+        
+        // Show step
+        function showStep(step) {
+            if (chatbotFlow[step].input) {
+                // Show typing indicator
+                const typingIndicator = showTypingIndicator();
+                
+                // After delay, show input request
+                setTimeout(() => {
+                    typingIndicator.remove();
+                    addMessage(chatbotFlow[step].message);
+                    awaitingInput = true;
+                    inputStep = chatbotFlow[step].next;
+                }, 1500);
+            } else {
+                // Show typing indicator
+                const typingIndicator = showTypingIndicator();
+                
+                // After delay, show options
+                setTimeout(() => {
+                    typingIndicator.remove();
+                    showOptions(step);
+                }, 1500);
+            }
+        }
+        
+        // Send message
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message === '') return;
+            
+            addMessage(message, true);
+            chatInput.value = '';
+            
+            if (awaitingInput) {
+                // In a real implementation, you would send this data to your server
+                const typingIndicator = showTypingIndicator();
+                
+                setTimeout(() => {
+                    typingIndicator.remove();
+                    addMessage("Obrigado! Sua informação foi registrada. Em breve nossa equipe entrará em contato.");
+                    currentStep = inputStep;
+                    awaitingInput = false;
+                    showStep(currentStep);
+                }, 1500);
+            } else {
+                // Improved keyword matching for user messages
+                const typingIndicator = showTypingIndicator();
+                
+                setTimeout(() => {
+                    typingIndicator.remove();
+                    
+                    const lowerMessage = message.toLowerCase();
+                    
+                    if (lowerMessage.includes('matrícula') || lowerMessage.includes('matricula') || lowerMessage.includes('2026')) {
+                        currentStep = 'matriculas';
+                    } else if (lowerMessage.includes('unidade') || lowerMessage.includes('unidades')) {
+                        currentStep = 'unidades';
+                    } else if (lowerMessage.includes('visita') || lowerMessage.includes('agendar') || lowerMessage.includes('visitar')) {
+                        currentStep = 'visita';
+                    } else if (lowerMessage.includes('valor') || lowerMessage.includes('preço') || lowerMessage.includes('custo') || lowerMessage.includes('mensalidade')) {
+                        currentStep = 'valores';
+                    } else if (lowerMessage.includes('telefone') || lowerMessage.includes('ligar') || lowerMessage.includes('falar') || lowerMessage.includes('contato')) {
+                        // Check which unit they might be referring to
+                        if (lowerMessage.includes('i') || lowerMessage.includes('206')) {
+                            currentStep = 'telefone_i';
+                        } else if (lowerMessage.includes('ii') || lowerMessage.includes('2') || lowerMessage.includes('201')) {
+                            currentStep = 'telefone_ii';
+                        } else {
+                            addMessage("Para qual unidade você gostaria do telefone?");
+                            currentStep = 'unidades';
+                        }
+                    } else if (lowerMessage.includes('documento') || lowerMessage.includes('documentação')) {
+                        currentStep = 'documentacao';
+                    } else if (lowerMessage.includes('processo') || lowerMessage.includes('como fazer')) {
+                        currentStep = 'processo_matricula';
+                    } else {
+                        addMessage("Desculpe, não entendi. Por favor, selecione uma das opções abaixo:");
+                        currentStep = 'start';
+                    }
+                    showStep(currentStep);
+                }, 1500);
+            }
+        }
+        
+        // Event listeners
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // Initialize chatbot
+        window.addEventListener('DOMContentLoaded', function() {
+            // Add welcome message after a short delay
+            setTimeout(() => {
+                showStep(currentStep);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

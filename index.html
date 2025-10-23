@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colégio Reação - Excelência Educacional | Matrículas 2025</title>
+    <meta name="description" content="Colégio Reação: Tradição, inovação e excelência educacional. Matrículas abertas 2025. Educação Infantil ao Ensino Médio em Brasília.">
+    <meta name="keywords" content="colégio brasília, ensino fundamental, ensino médio, matrículas 2025, educação de qualidade, escola particular brasília">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'reacao-red': '#c40014',
+                        'reacao-blue': '#0033a0',
+                        'reacao-light-blue': '#e6efff',
+                        'reacao-dark-blue': '#002366'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #c40014 0%, #0033a0 100%);
+        }
+        
+        .section-padding {
+            padding: 5rem 1rem;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.6s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        
+        .chat-bubble {
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        
+        .chat-input:focus {
+            outline: none;
+            border-color: #0033a0;
+        }
+        
+        .banner-slide {
+            animation: bannerSlide 20s infinite;
+        }
+        
+        @keyframes bannerSlide {
+            0%, 25% { transform: translateX(0); }
+            30%, 55% { transform: translateX(-100%); }
+            60%, 85% { transform: translateX(-200%); }
+            90%, 100% { transform: translateX(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 3rem 1rem;
+            }
+        }
+        
+        .main-banner {
+            background-image: url(img/bannerprincipal.png);
+            color: white;
+            text-align: center;
+            max-width: auto;
+            height: 550px;
+        }
+        
+        .main-banner h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .main-banner p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .main-banner button {
+            background-color: #c40014;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .main-banner button:hover {
+            background-color: #a30010;
+        }
+    </style>
+    
+    <!-- Google Analytics Placeholder -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Meta Pixel Placeholder -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+</head>
+<body class="bg-white font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <a href="index.html"><img src="img/LOGO-REAÇÃO-PNG-CONTORNO-BRANCO.png" width="150px"></a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Início</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Sobre</a>
+                    <a href="#unidades" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Unidades</a>
+                    <a href="#matriculas" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Matrículas 2026</a>
+                    <a href="#contato" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Contato</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Início</a>
+                <a href="#sobre" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Sobre</a>
+                <a href="#unidades" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Unidades</a>
+                <a href="#matriculas" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Matrículas 2026</a>
+                <a href="#contato" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Promocional -->
+    <div class="mt-16 overflow-hidden bg-reacao-dark-blue">
+        <div class="flex banner-slide w-300%">
+            <!-- Banner 1 -->
+            <div class="w-full flex-shrink-0">
+                <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between">
+                    <div class="text-white text-center md:text-left mb-2 md:mb-0">
+                        <span class="font-bold">MATRÍCULAS 2026 ABERTAS</span> - Garanta a vaga do seu filho na escola que transforma vidas
+                    </div>
+                    <button onclick="scrollToSection('matriculas')" class="bg-reacao-red text-white px-4 py-2 rounded-lg font-medium hover:bg-red-800 transition-colors text-sm">
+                        Saiba Mais
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Banner 2 -->
+            <div class="w-full flex-shrink-0">
+                <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between">
+                    <div class="text-white text-center md:text-left mb-2 md:mb-0">
+                        <span class="font-bold">AGENDE UMA VISITA</span> - Conheça nossa estrutura e metodologia
+                    </div>
+                    <button onclick="scrollToSection('contato')" class="bg-reacao-red text-white px-4 py-2 rounded-lg font-medium hover:bg-red-800 transition-colors text-sm">
+                        Agendar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner Principal -->
+    <div class="main-banner mt-auto">
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="pt-16">
+        <!-- Sobre o Colégio Preview -->
+        <div class="section-padding bg-reacao-light-blue">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-reacao-blue mb-4">Colégio Reação</h3>
+                    <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                        Há mais de duas décadas formando cidadãos preparados para os desafios do futuro. 
+                        Nossa metodologia inovadora combina tradição educacional com tecnologia moderna, 
+                        proporcionando um ambiente acolhedor e familiar onde cada aluno é valorizado.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="text-center p-8 bg-white rounded-xl shadow-md card-hover">
+                        <div class="w-20 h-20 bg-gradient-to-br from-reacao-red to-reacao-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <span class="text-white text-3xl">🎓</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-reacao-blue mb-4">Excelência Acadêmica</h4>
+                        <p class="text-gray-600">Metodologia comprovada com resultados excepcionais em vestibulares e ENEM</p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-white rounded-xl shadow-md card-hover">
+                        <div class="w-20 h-20 bg-gradient-to-br from-reacao-blue to-reacao-red rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <span class="text-white text-3xl">👨‍👩‍👧‍👦</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-reacao-blue mb-4">Ambiente Familiar</h4>
+                        <p class="text-gray-600">Acolhimento e cuidado personalizado para o desenvolvimento integral de cada aluno</p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-white rounded-xl shadow-md card-hover">
+                        <div class="w-20 h-20 bg-gradient-to-br from-reacao-red to-reacao-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <span class="text-white text-3xl">💡</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-reacao-blue mb-4">Inovação Pedagógica</h4>
+                        <p class="text-gray-600">Metodologias ativas e tecnologia educacional para preparar para o futuro</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button onclick="scrollToSection('unidades')" class="bg-reacao-blue text-white px-8 py-4 rounded-lg hover:bg-blue-800 transition-colors shadow-lg mr-4 font-medium">
+                        Conhecer Unidade I - Recanto das Emas
+                    </button>
+                    <button onclick="scrollToSection('unidades')" class="bg-reacao-red text-white px-8 py-4 rounded-lg hover:bg-red-800 transition-colors shadow-lg font-medium">
+                        Conhecer Unidade II - Recanto das Emas
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Galeria -->
+        <div class="section-padding">
+            <div class="container mx-auto">
+                <h3 class="text-3xl font-bold text-center text-reacao-blue mb-12">Nossa Estrutura</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-br from-reacao-light-blue to-white rounded-2xl p-8 h-80 flex flex-col items-center justify-center card-hover shadow-lg">
+                        <span class="text-6xl mb-4">📚</span>
+                        <h4 class="text-xl font-semibold text-reacao-blue mb-2">Biblioteca Moderna</h4>
+                        <p class="text-gray-600 text-center">Acervo atualizado com mais de 10.000 títulos e ambiente de estudo inspirador</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-reacao-light-blue to-white rounded-2xl p-8 h-80 flex flex-col items-center justify-center card-hover shadow-lg">
+                        <span class="text-6xl mb-4">🔬</span>
+                        <h4 class="text-xl font-semibold text-reacao-blue mb-2">Laboratórios Equipados</h4>
+                        <p class="text-gray-600 text-center">Laboratórios de ciências, robótica e tecnologia para aprendizado prático</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-reacao-light-blue to-white rounded-2xl p-8 h-80 flex flex-col items-center justify-center card-hover shadow-lg">
+                        <span class="text-6xl mb-4">⚽</span>
+                        <h4 class="text-xl font-semibold text-reacao-blue mb-2">Áreas Esportivas</h4>
+                        <p class="text-gray-600 text-center">Quadras poliesportivas, piscina e espaços para desenvolvimento físico</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Depoimentos -->
+        <div class="section-padding bg-gray-50">
+            <div class="container mx-auto">
+                <h3 class="text-3xl font-bold text-center text-reacao-blue mb-12">O que dizem sobre nós</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-md card-hover">
+                        <div class="flex items-start mb-6">
+                            <div class="text-reacao-red text-4xl mr-4">"</div>
+                            <p class="text-gray-700 text-lg">"O Colégio Reação transformou a vida acadêmica da minha filha. O cuidado individual e a excelência do ensino são incomparáveis. Ela desenvolveu não apenas conhecimento, mas também autonomia e confiança."</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-reacao-red rounded-full flex items-center justify-center mr-4 shadow-md">
+                                <span class="text-white font-bold">MF</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Maria Fernanda</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-md card-hover">
+                        <div class="flex items-start mb-6">
+                            <div class="text-reacao-blue text-4xl mr-4">"</div>
+                            <p class="text-gray-700 text-lg">"Ambiente acolhedor, professores dedicados e metodologia que realmente prepara para o futuro. Meu filho foi aprovado em Medicina na USP e credito muito ao Colégio Reação essa conquista. Recomendo de olhos fechados!"</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-reacao-blue rounded-full flex items-center justify-center mr-4 shadow-md">
+                                <span class="text-white font-bold">RS</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Roberto Silva</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="section-padding">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-reacao-blue mb-4">Sobre o Colégio Reação</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">Conheça nossa história, valores e metodologia que fazem a diferença na educação</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-16">
+                <div>
+                    <h3 class="text-2xl font-bold text-reacao-red mb-6">Nossa História</h3>
+                    <p class="text-gray-700 mb-6 text-lg">
+                        Fundado em 1997, o Colégio Reação nasceu do sonho de criar uma instituição educacional que combinasse excelência acadêmica com valores humanos sólidos. Ao longo de mais de duas décadas, formamos milhares de alunos que hoje são profissionais de destaque em suas áreas.
+                    </p>
+                    <p class="text-gray-700 text-lg">
+                        Nossa trajetória é marcada pela constante inovação pedagógica, sempre mantendo o foco no desenvolvimento integral de cada estudante. Investimos em tecnologia educacional, formação continuada de professores e metodologias ativas que colocam o aluno no centro do processo de aprendizagem.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-reacao-light-blue to-white rounded-2xl p-8 h-96 flex items-center justify-center shadow-lg">
+                    <div class="text-center">
+                        <span class="text-8xl mb-4">🏛️</span>
+                        <p class="text-2xl font-bold text-reacao-blue">28 anos de tradição</p>
+                        <p class="text-gray-600 mt-2">e inovação em educação</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-gradient-to-br from-reacao-light-blue to-white p-8 rounded-2xl text-center card-hover shadow-lg border-l-4 border-reacao-blue">
+                    <h4 class="text-xl font-bold text-reacao-blue mb-4">Missão</h4>
+                    <p class="text-gray-700">Formar cidadãos críticos, éticos e preparados para os desafios do século XXI, promovendo o desenvolvimento integral através de uma educação de excelência.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-reacao-light-blue to-white p-8 rounded-2xl text-center card-hover shadow-lg border-l-4 border-reacao-red">
+                    <h4 class="text-xl font-bold text-reacao-red mb-4">Visão</h4>
+                    <p class="text-gray-700">Ser reconhecida como referência em educação de qualidade, inovação pedagógica e formação de líderes transformadores da sociedade.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-reacao-light-blue to-white p-8 rounded-2xl text-center card-hover shadow-lg border-l-4 border-gray-400">
+                    <h4 class="text-xl font-bold text-gray-700 mb-4">Valores</h4>
+                    <p class="text-gray-700">Excelência, ética, respeito, inovação, responsabilidade social e compromisso com o desenvolvimento humano integral.</p>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-reacao-light-blue to-white p-12 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-reacao-blue mb-8 text-center">Metodologia e Diferenciais</h3>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-reacao-red mb-3 flex items-center">
+                                <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✓</span>
+                                Ensino Personalizado
+                            </h4>
+                            <p class="text-gray-700">Turmas reduzidas que permitem atenção individualizada e acompanhamento próximo do desenvolvimento de cada aluno.</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-reacao-red mb-3 flex items-center">
+                                <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✓</span>
+                                Tecnologia Educacional
+                            </h4>
+                            <p class="text-gray-700">Integração de ferramentas digitais modernas que potencializam o aprendizado e preparam para o futuro.</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-semibold text-reacao-red mb-3 flex items-center">
+                                <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✓</span>
+                                Desenvolvimento Socioemocional
+                            </h4>
+                            <p class="text-gray-700">Programa estruturado para desenvolver inteligência emocional, liderança e habilidades sociais.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-reacao-red mb-3 flex items-center">
+                                <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✓</span>
+                                Preparação para o Futuro
+                            </h4>
+                            <p class="text-gray-700">Orientação vocacional e preparação sólida para vestibulares e ENEM com resultados comprovados.</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-reacao-red mb-3 flex items-center">
+                                <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✓</span>
+                                Projetos Interdisciplinares
+                            </h4>
+                            <p class="text-gray-700">Atividades que integram diferentes áreas do conhecimento, estimulando o pensamento crítico e a criatividade.</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-semibold text-reacao-red mb-3 flex items-center">
+                                <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✓</span>
+                                Formação de Valores
+                            </h4>
+                            <p class="text-gray-700">Educação baseada em princípios éticos e humanos para formar cidadãos conscientes e responsáveis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unidades Section -->
+    <section id="unidades" class="section-padding bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-reacao-blue mb-4">Nossas Unidades</h2>
+                <p class="text-lg text-gray-700">Duas unidades estrategicamente localizadas para melhor atender nossa comunidade</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-reacao-blue rounded-full flex items-center justify-center mr-4 shadow-md">
+                            <span class="text-white font-bold">I</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-reacao-blue">Unidade I - Recanto das Emas</h3>
+                    </div>
+                    <img src="img/unidade 1.png" max-width="300px"><br>
+                    <div class="mb-6">
+                        <p class="text-gray-700 mb-3 flex items-start">
+                            <span class="text-reacao-red mr-2">📍</span>
+                            <a href="https://maps.app.goo.gl/fxySPBEUrmutGKRV7"><span><strong>Endereço:</strong> Quadra 206, Conjunto 02, Lote 01 - Recanto das Emas, Brasília - DF</span></a>
+                        </p>
+                        <p class="text-gray-700 mb-3 flex items-center">
+                            <span class="text-reacao-red mr-2">📞</span>
+                            <a href="tel:+556133331434"><span><strong>Telefone:</strong> (61) 3333-1434</span></a>
+                        </p>
+                        <p class="text-gray-700 mb-4 flex items-start">
+                            <span class="text-reacao-red mr-2">🎓</span>
+                            <span><strong>Níveis:</strong> Educação Infantil aos Anos Finais</span>
+                        </p>
+                    </div>
+                    <div class="mb-6 rounded-xl overflow-hidden shadow-md">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15348.323306718821!2d-47.8839!3d-15.7801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2cda11269d0f%3A0xa1c5b52543482ca9!2zQ29sw6lnaW8gUmVhw6fDo28!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <button onclick="scrollToSection('contato')" class="w-full bg-reacao-blue text-white py-4 rounded-xl font-semibold hover:bg-blue-800 transition-colors shadow-lg">
+                        Agendar visita - Unidade I
+                    </button>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-reacao-red rounded-full flex items-center justify-center mr-4 shadow-md">
+                            <span class="text-white font-bold">II</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-reacao-blue">Unidade II - Recanto das Emas</h3>
+                    </div>
+                    <img src="img/unidade 2.png" max-width="300px"><br>
+                    <div class="mb-6">
+                        <p class="text-gray-700 mb-3 flex items-start">
+                            <span class="text-reacao-red mr-2">📍</span>
+                            <a href="https://maps.app.goo.gl/t7Fixsj7ZocbeF2M8"><span><strong>Endereço:</strong> Quadra 201, Conjunto 01, Lote 05 - Recanto das Emas, Brasília - DF</span></a>
+                        </p>
+                        <p class="text-gray-700 mb-3 flex items-center">
+                            <span class="text-reacao-red mr-2">📞</span>
+                            <a href="tel:+556133333332"><span><strong>Telefone:</strong> (61) 3333-3332</span></a>
+                        </p>
+                        <p class="text-gray-700 mb-4 flex items-start">
+                            <span class="text-reacao-red mr-2">🎓</span>
+                            <span><strong>Níveis:</strong> Educação Infantil ao Ensino Médio</span>
+                        </p>
+                    </div>
+                    <div class="mb-6 rounded-xl overflow-hidden shadow-md">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15348.323306718821!2d-47.9178!3d-15.8267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2ce7021f85bb%3A0x5bc8f50757d27e60!2zQ29sw6lnaW8gUmVhw6fDo28!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <button onclick="scrollToSection('contato')" class="w-full bg-reacao-red text-white py-4 rounded-xl font-semibold hover:bg-red-800 transition-colors shadow-lg">
+                        Agendar visita - Unidade II
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matrículas Section -->
+    <section id="matriculas" class="section-padding">
+        <div class="container mx-auto">
+            <div class="hero-gradient text-white p-12 rounded-2xl mb-16 text-center shadow-xl">
+                <h2 class="text-4xl font-bold mb-4">Matrículas 2026</h2>
+                <p class="text-xl mb-6">A jornada de excelência começa aqui.</p>
+                <p class="text-lg opacity-90">Garante já a vaga do seu filho em uma das melhores escolas de Brasília</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-2xl font-bold text-reacao-blue mb-8">Por que escolher o Colégio Reação?</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-reacao-red rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">✓</span>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-medium">Metodologia comprovada com excelentes resultados no ENEM e vestibulares</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-reacao-red rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">✓</span>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-medium">Professores altamente qualificados com formação continuada</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-reacao-red rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">✓</span>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-medium">Infraestrutura moderna e completa para todas as idades</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-reacao-red rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">✓</span>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-medium">Ambiente acolhedor e familiar que valoriza cada aluno</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-reacao-red rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">✓</span>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-medium">Programa de desenvolvimento socioemocional e orientação vocacional</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-reacao-blue">
+                        <h3 class="text-2xl font-bold text-reacao-blue mb-6">Processo de Matrícula</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-reacao-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white text-sm font-bold">1</span>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 font-medium">Agende uma visita para conhecer nossa estrutura e metodologia</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-reacao-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white text-sm font-bold">2</span>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 font-medium">Entrevista com a coordenação pedagógica</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-reacao-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white text-sm font-bold">3</span>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 font-medium">Avaliação diagnóstica (quando aplicável)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-reacao-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white text-sm font-bold">4</span>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 font-medium">Apresentação da proposta pedagógica e valores</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-reacao-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white text-sm font-bold">5</span>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 font-medium">Formalização da matrícula e documentação</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 p-6 bg-gradient-to-r from-reacao-light-blue to-white rounded-xl border border-gray-200">
+                            <h4 class="text-lg font-bold text-reacao-blue mb-3">Documentação Necessária</h4>
+                            <ul class="text-gray-700 space-y-2">
+                                <li>• 02 fotos 3x4 (atualizadas);</li>
+                                <li>• Cópia da Certidão de Nascimento;</li>
+                                <li>• CPF do aluno;</li>
+                                <li>• Cópia do cartão de vacina;</li>
+                                <li>• Cópia do CPF e identidade do responsável;</li>
+                                <li>• Cópia da identidade do aluno (Ensino Médio);</li>
+                                <li>• Comprovante sanguíneo;</li>
+                                <li>• Declaração de transferência e histórico escolar.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <a href="chatbot.html"><button onclick="document.getElementById('chat-toggle').click()" class="bg-reacao-red text-white px-8 py-4 rounded-xl font-bold hover:bg-red-800 transition-colors shadow-lg text-lg">
+                            Iniciar Processo de Matrícula
+                        </button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="section-padding bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-reacao-blue mb-4">Entre em Contato</h2>
+                <p class="text-lg text-gray-700">Estamos à disposição para esclarecer dúvidas e agendar visitas</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+                        <h3 class="text-2xl font-bold text-reacao-blue mb-6">Informações de Contato</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-reacao-light-blue rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-reacao-blue">📞</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Telefones</h4>
+                                    <a href="tel:+556133331434"><p class="text-gray-700">Unidade I: (61) 3333-1434</p></a>
+                                    <a href="tel:+55613333332"><p class="text-gray-700">Unidade II: (61) 3333-3332</p></a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-reacao-light-blue rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-reacao-blue">🕒</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Horário de Atendimento</h4>
+                                    <p class="text-gray-700">Segunda a sexta: 7h30 às 18h</p>
+                                    <p class="text-gray-700">Sábado: 8h às 12h</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-reacao-light-blue rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-reacao-blue">📍</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Endereços</h4>
+                                    <a href="https://maps.app.goo.gl/jPrEhWpxSAtLhEPq5"><p class="text-gray-700 mb-2">Unidade I: Quadra 206, Conjunto 02, Lote 01 - Recanto das Emas</p></a>
+                                    <a href="https://maps.app.goo.gl/t7Fixsj7ZocbeF2M8"><p class="text-gray-700">Unidade II: Quadra 201, Conjunto 01, Lote 05 - Recanto das Emas</p></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-reacao-light-blue to-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-bold text-reacao-blue mb-4">Redes Sociais</h3>
+                        <p class="text-gray-700 mb-6">Acompanhe nosso trabalho e fique por dentro das novidades</p>
+                        <div class="flex space-x-4">
+                            <a href="https://www.instagram.com/colegioreacao/" class="w-12 h-12 bg-reacao-blue rounded-full flex items-center justify-center text-white hover:bg-blue-800 transition-colors shadow-md">
+                                <img src="img/instagram.png" width="30px">
+                            </a>
+                            </a>
+                            <a href="https://www.facebook.com/colegioreacao/?locale=pt_BR" class="w-12 h-12 bg-reacao-blue rounded-full flex items-center justify-center text-white hover:bg-blue-800 transition-colors shadow-md">
+                                <img src="img/facebook.png" width="30px">
+                            </a>
+                            <a href="https://www.youtube.com/@COL%C3%89GIOREA%C3%87%C3%83O" class="w-12 h-12 bg-reacao-blue rounded-full flex items-center justify-center text-white hover:bg-blue-800 transition-colors shadow-md">
+                                <img src="img/youtube.png" width="30px">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-reacao-blue mb-6">Conheça nossa assistente virtual!</h3>
+                        <img src="img/mika.png" style="padding-left: 80px;">
+                        <a href="chatbot.html"><button type="submit" class="w-full bg-reacao-blue text-white py-4 rounded-xl font-bold hover:bg-blue-800 transition-colors shadow-lg">
+                            Falar com Mila!
+                        </button></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-reacao-dark-blue text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="img/LOGO-REAÇÃO-PNG-CONTORNO-BRANCO.png" width="250px">
+                    <p class="text-gray-300">A jornada de excelência começa aqui.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Nossas Unidades</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <a href="https://maps.app.goo.gl/jPrEhWpxSAtLhEPq5"><li>Unidade I - Quadra 206, Recanto das Emas</li></a>
+                        <a href="https://maps.app.goo.gl/t7Fixsj7ZocbeF2M8"><li>Unidade II - Quadra 201, Recanto das Emas</li></a>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="#sobre" class="text-gray-300 hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="#unidades" class="text-gray-300 hover:text-white transition-colors">Unidades</a></li>
+                        <li><a href="#matriculas" class="text-gray-300 hover:text-white transition-colors">Matrículas 2026</a></li>
+                        <li><a href="#contato" class="text-gray-300 hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <a href="tel:+556133331434"><li>Unidade I: (61) 3333-1434</li></a>
+                        <a href="tel:+556133333332"><li>Unidade II: (61) 33333332</li></a>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2025 Colégio Reação. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth Scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        // Chatbot Functionality
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatContainer = document.getElementById('chat-container');
+        const chatClose = document.getElementById('chat-close');
+        const chatSend = document.getElementById('chat-send');
+        const chatInput = document.getElementById('chat-input');
+        const chatMessages = document.getElementById('chat-messages');
+        
+        chatToggle.addEventListener('click', function() {
+            chatContainer.classList.toggle('hidden');
+        });
+        
+        chatClose.addEventListener('click', function() {
+            chatContainer.classList.add('hidden');
+        });
+        
+        // Chatbot Flow
+        const chatbotFlow = {
+            start: {
+                message: "Olá! Bem-vindo ao Colégio Reação! Como posso ajudar você hoje?",
+                options: [
+                    { text: "Matrículas 2025", next: "matriculas" },
+                    { text: "Conhecer as unidades", next: "unidades" },
+                    { text: "Agendar uma visita", next: "visita" },
+                    { text: "Falar com atendente", next: "atendente" }
+                ]
+            },
+            matriculas: {
+                message: "Excelente! As matrículas para 2025 estão abertas. Posso te ajudar com:",
+                options: [
+                    { text: "Processo de matrícula", next: "processo_matricula" },
+                    { text: "Valores e condições", next: "valores" },
+                    { text: "Documentação necessária", next: "documentacao" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            unidades: {
+                message: "Temos duas unidades no Recanto das Emas. Qual você gostaria de conhecer?",
+                options: [
+                    { text: "Unidade I - Quadra 206", next: "unidade_i" },
+                    { text: "Unidade II - Quadra 201", next: "unidade_ii" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            unidade_i: {
+                message: "A Unidade I fica na Quadra 206 do Recanto das Emas e atende da Educação Infantil ao Ensino Médio. Oferecemos estrutura completa com laboratórios, biblioteca, quadras esportivas e muito mais!",
+                options: [
+                    { text: "Agendar visita na Unidade I", next: "agendar_i" },
+                    { text: "Falar sobre matrículas", next: "matriculas" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            unidade_ii: {
+                message: "A Unidade II fica na Quadra 201 do Recanto das Emas e atende do Ensino Fundamental II ao Ensino Médio. Contamos com laboratórios de tecnologia, robótica e preparação intensiva para vestibulares.",
+                options: [
+                    { text: "Agendar visita na Unidade II", next: "agendar_ii" },
+                    { text: "Falar sobre matrículas", next: "matriculas" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            visita: {
+                message: "Que bom que você quer nos visitar! Para qual unidade gostaria de agendar?",
+                options: [
+                    { text: "Unidade I - Quadra 206", next: "agendar_i" },
+                    { text: "Unidade II - Quadra 201", next: "agendar_ii" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            agendar_i: {
+                message: "Perfeito! Para agendar uma visita na Unidade I (Quadra 206), você pode:\n\n1. Ligar para (61) 3340-1234\n2. Preencher o formulário de contato no site\n3. Enviar uma mensagem aqui com seu nome e telefone que entraremos em contato",
+                options: [
+                    { text: "Enviar meus dados para contato", next: "contato_i" },
+                    { text: "Ver outras opções", next: "start" }
+                ]
+            },
+            agendar_ii: {
+                message: "Perfeito! Para agendar uma visita na Unidade II (Quadra 201), você pode:\n\n1. Ligar para (61) 3340-5678\n2. Preencher o formulário de contato no site\n3. Enviar uma mensagem aqui com seu nome e telefone que entraremos em contato",
+                options: [
+                    { text: "Enviar meus dados para contato", next: "contato_ii" },
+                    { text: "Ver outras opções", next: "start" }
+                ]
+            },
+            contato_i: {
+                message: "Por favor, digite seu nome e telefone que nossa equipe entrará em contato para agendar sua visita na Unidade I:",
+                input: true,
+                next: "confirmacao_i"
+            },
+            contato_ii: {
+                message: "Por favor, digite seu nome e telefone que nossa equipe entrará em contato para agendar sua visita na Unidade II:",
+                input: true,
+                next: "confirmacao_ii"
+            },
+            confirmacao_i: {
+                message: "Obrigado! Sua solicitação para a Unidade I foi registrada. Nossa equipe entrará em contato em até 24 horas. Enquanto isso, posso ajudar com mais alguma coisa?",
+                options: [
+                    { text: "Conhecer mais sobre o colégio", next: "sobre" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            confirmacao_ii: {
+                message: "Obrigado! Sua solicitação para a Unidade II foi registrada. Nossa equipe entrará em contato em até 24 horas. Enquanto isso, posso ajudar com mais alguma coisa?",
+                options: [
+                    { text: "Conhecer mais sobre o colégio", next: "sobre" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            processo_matricula: {
+                message: "O processo de matrícula inclui:\n\n1. Agendamento de visita\n2. Entrevista com coordenação\n3. Avaliação diagnóstica (quando aplicável)\n4. Apresentação da proposta pedagógica\n5. Formalização da matrícula\n\nGostaria de agendar uma visita?",
+                options: [
+                    { text: "Sim, agendar visita", next: "visita" },
+                    { text: "Conhecer valores", next: "valores" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            valores: {
+                message: "Temos condições especiais para 2025, incluindo:\n\n• Desconto para irmãos\n• Programa de bolsas de estudo\n• Condições especiais para transferências\n\nPara informações detalhadas sobre valores, entre em contato conosco: (61) 3340-1234 (Unidade I) ou (61) 3340-5678 (Unidade II)",
+                options: [
+                    { text: "Agendar visita", next: "visita" },
+                    { text: "Falar com atendente", next: "atendente" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            documentacao: {
+                message: "Para a matrícula, você precisará de:\n\n• Cópia da Certidão de Nascimento\n• Cópia do CPF e RG do aluno\n• Cópia do CPF e RG dos responsáveis\n• Comprovante de residência\n• 2 fotos 3x4\n• Histórico escolar ou declaração de transferência",
+                options: [
+                    { text: "Processo de matrícula", next: "processo_matricula" },
+                    { text: "Agendar visita", next: "visita" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            sobre: {
+                message: "O Colégio Reação tem mais de 20 anos de tradição em educação, com metodologia inovadora que combina excelência acadêmica com desenvolvimento humano. Oferecemos Educação Infantil ao Ensino Médio com infraestrutura completa e professores qualificados.",
+                options: [
+                    { text: "Conhecer unidades", next: "unidades" },
+                    { text: "Matrículas 2025", next: "matriculas" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            atendente: {
+                message: "Para falar com um de nossos atendentes, você pode:\n\n• Ligar para (61) 3340-1234 (Unidade I)\n• Ligar para (61) 3340-5678 (Unidade II)\n• Enviar um e-mail para contato@colegioreacao.com.br\n\nPosso ajudar com mais alguma coisa?",
+                options: [
+                    { text: "Matrículas 2025", next: "matriculas" },
+                    { text: "Conhecer unidades", next: "unidades" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            }
+        };
+        
+        let currentStep = "start";
+        let awaitingInput = false;
+        let inputStep = "";
+        
+        function addMessage(message, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `mb-4 ${isUser ? 'text-right' : ''}`;
+            
+            const bubble = document.createElement('div');
+            bubble.className = `rounded-2xl p-3 chat-bubble inline-block ${isUser ? 'bg-reacao-blue text-white' : 'bg-gray-200 text-gray-800'}`;
+            bubble.innerHTML = `<p>${message}</p>`;
+            
+            messageDiv.appendChild(bubble);
+            
+            const time = document.createElement('p');
+            time.className = `text-xs text-gray-500 mt-1 ${isUser ? 'text-right' : ''}`;
+            time.textContent = 'Agora';
+            
+            messageDiv.appendChild(time);
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        function showOptions(step) {
+            const options = chatbotFlow[step].options;
+            if (options) {
+                let optionsHTML = '<div class="mt-2 space-y-2">';
+                options.forEach(option => {
+                    optionsHTML += `<button class="block w-full text-left p-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors text-sm option-btn" data-next="${option.next}">${option.text}</button>`;
+                });
+                optionsHTML += '</div>';
+                
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'mb-4';
+                
+                const bubble = document.createElement('div');
+                bubble.className = 'bg-gray-200 rounded-2xl p-3 chat-bubble';
+                bubble.innerHTML = `<p>${chatbotFlow[step].message}</p>${optionsHTML}`;
+                
+                messageDiv.appendChild(bubble);
+                
+                const time = document.createElement('p');
+                time.className = 'text-xs text-gray-500 mt-1';
+                time.textContent = 'Agora';
+                
+                messageDiv.appendChild(time);
+                chatMessages.appendChild(messageDiv);
+                
+                // Add event listeners to option buttons
+                document.querySelectorAll('.option-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const nextStep = this.getAttribute('data-next');
+                        addMessage(this.textContent, true);
+                        currentStep = nextStep;
+                        showStep(nextStep);
+                    });
+                });
+                
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+        
+        function showStep(step) {
+            if (chatbotFlow[step].input) {
+                addMessage(chatbotFlow[step].message);
+                awaitingInput = true;
+                inputStep = chatbotFlow[step].next;
+            } else {
+                showOptions(step);
+            }
+        }
+        
+        // Initialize chatbot
+        showStep(currentStep);
+        
+        // Send message functionality
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message === '') return;
+            
+            addMessage(message, true);
+            chatInput.value = '';
+            
+            if (awaitingInput) {
+                // In a real implementation, you would send this data to your server
+                addMessage("Obrigado! Sua informação foi registrada. Em breve nossa equipe entrará em contato.");
+                currentStep = inputStep;
+                awaitingInput = false;
+                setTimeout(() => showStep(currentStep), 1000);
+            } else {
+                // Simple keyword matching for user messages
+                setTimeout(() => {
+                    if (message.toLowerCase().includes('matrícula') || message.toLowerCase().includes('matricula')) {
+                        currentStep = 'matriculas';
+                    } else if (message.toLowerCase().includes('unidade')) {
+                        currentStep = 'unidades';
+                    } else if (message.toLowerCase().includes('visita') || message.toLowerCase().includes('agendar')) {
+                        currentStep = 'visita';
+                    } else if (message.toLowerCase().includes('valor') || message.toLowerCase().includes('preço')) {
+                        currentStep = 'valores';
+                    } else {
+                        addMessage("Desculpe, não entendi. Por favor, selecione uma das opções abaixo:");
+                        currentStep = 'start';
+                    }
+                    showStep(currentStep);
+                }, 1000);
+            }
+        }
+        
+        // Contact Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pelo seu interesse! Entraremos em contato em breve.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
