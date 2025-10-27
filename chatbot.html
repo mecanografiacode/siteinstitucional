@@ -261,17 +261,15 @@
                 ]
             },
             agendar_i: {
-                message: "Perfeito! Para agendar uma visita na Unidade I (Quadra 206), você pode:\n\n1. Ligar para (61) 3333-1434\n2. Preencher o formulário de contato no site\n3. Enviar uma mensagem aqui com seu nome e telefone que entraremos em contato",
+                message: "Perfeito! Para agendar uma visita na Unidade I (Quadra 206), você pode:\n\nLigar para (61) 3333-1434",
                 options: [
-                    { text: "Enviar meus dados para contato", next: "contato_i" },
                     { text: "Ligar agora", next: "call_i" },
                     { text: "Ver outras opções", next: "start" }
                 ]
             },
             agendar_ii: {
-                message: "Perfeito! Para agendar uma visita na Unidade II (Quadra 201), você pode:\n\n1. Ligar para (61) 3333-3332\n2. Preencher o formulário de contato no site\n3. Enviar uma mensagem aqui com seu nome e telefone que entraremos em contato",
+                message: "Perfeito! Para agendar uma visita na Unidade II (Quadra 201), você pode:\n\nLigar para (61) 3333-3332",
                 options: [
-                    { text: "Enviar meus dados para contato", next: "contato_ii" },
                     { text: "Ligar agora", next: "call_ii" },
                     { text: "Ver outras opções", next: "start" }
                 ]
@@ -303,6 +301,7 @@
             processo_matricula: {
                 message: "O processo de matrícula inclui:\n\n1. Agendamento de visita\n2. Entrevista com coordenação\n3. Avaliação diagnóstica (quando aplicável)\n4. Apresentação da proposta pedagógica\n5. Formalização da matrícula\n\nGostaria de agendar uma visita?",
                 options: [
+                    { text: "Documentação necessária", next: "documentacao" },
                     { text: "Sim, agendar visita", next: "visita" },
                     { text: "Voltar ao início", next: "start" }
                 ]
