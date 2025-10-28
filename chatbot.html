@@ -205,8 +205,8 @@
             unidade_i: {
                 message: "A Unidade I fica na Quadra 206 do Recanto das Emas e atende da Educação Infantil aos Anos Finais do Ensino Fundamental. Oferecemos estrutura completa com laboratórios, biblioteca, quadras esportivas e muito mais!",
                 options: [
-                    { text: "Agendar visita na Unidade I", next: "agendar_i" },
                     { text: "Telefone da Unidade I", next: "telefone_i" },
+                    { text: "Falar no WhatsApp da Unidade I", next: "whatsapp_i" },
                     { text: "Falar sobre matrículas", next: "matriculas" },
                     { text: "Voltar ao início", next: "start" }
                 ]
@@ -214,8 +214,8 @@
             unidade_ii: {
                 message: "A Unidade II fica na Quadra 201 do Recanto das Emas e atende da Educação Infantil ao Ensino Médio. Oferecemos estrutura completa com laboratórios, biblioteca, quadras esportivas e muito mais! .",
                 options: [
-                    { text: "Agendar visita na Unidade II", next: "agendar_ii" },
                     { text: "Telefone da Unidade II", next: "telefone_ii" },
+                    { text: "Falar no WhatsApp da Unidade II", next: "whatsapp_ii" },
                     { text: "Falar sobre matrículas", next: "matriculas" },
                     { text: "Voltar ao início", next: "start" }
                 ]
@@ -264,6 +264,7 @@
                 message: "Perfeito! Para agendar uma visita na Unidade I (Quadra 206), você pode:\n\nLigar para (61) 3333-1434",
                 options: [
                     { text: "Ligar agora", next: "call_i" },
+                    { text: "Falar no WhatsApp da Unidade I", next: "whatsapp_i" },
                     { text: "Ver outras opções", next: "start" }
                 ]
             },
@@ -271,6 +272,7 @@
                 message: "Perfeito! Para agendar uma visita na Unidade II (Quadra 201), você pode:\n\nLigar para (61) 3333-3332",
                 options: [
                     { text: "Ligar agora", next: "call_ii" },
+                    { text: "Falar no WhatsApp da Unidade II", next: "whatsapp_ii" },
                     { text: "Ver outras opções", next: "start" }
                 ]
             },
@@ -336,7 +338,23 @@
                     { text: "Conhecer unidades", next: "unidades" },
                     { text: "Voltar ao início", next: "start" }
                 ]
-            }
+            },
+            whatsapp_i: {
+            message: "Redirecionando para o WhatsApp da Unidade I...",
+            action: "https://wa.me/5561996410987?text=Quero%20mais%20informa%C3%A7%C3%B5es...",
+            options: [
+                    { text: "Agendar visita", next: "agendar_i" },
+                    { text: "Voltar ao início", next: "start" }
+                ]
+            },
+            whatsapp_ii: {
+            message: "Redirecionando para o WhatsApp da Unidade II...",
+            action: "https://wa.me/5561998306988?text=Quero%20mais%20informa%C3%A7%C3%B5es...",
+            options: [
+                    { text: "Agendar visita", next: "agendar_ii" },
+                    { text: "Voltar ao início", next: "start" }
+    ]
+}
         };
         
         // DOM Elements
