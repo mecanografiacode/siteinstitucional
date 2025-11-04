@@ -90,24 +90,193 @@
             90%, 100% { transform: translateX(0); }
         }
         
+        /* Barra de navegação flutuante */
+        header {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            height: 60px;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+        }
+        
+        .logo {
+            height: 40px;
+            width: auto;
+        }
+        
+        .main-banner {
+            margin-top: -60px;
+            padding-top: 60px;
+        }
+        
+        /* Slideshow do banner principal */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+        }
+        
+        .slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 0.8s ease-in-out;
+        }
+        
+        .slide {
+            width: 1920px;
+            height: auto;
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .slide-content {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            color: white;
+            max-width: 500px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .slide-description {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .slide-button {
+            background-color: #c40014;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .slide-button:hover {
+            background-color: #a30010;
+        }
+        
+        .slideshow-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .control-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .control-dot.active {
+            background-color: white;
+        }
+        
+        .slideshow-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        
+        .nav-button {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-button:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
         /* Ajustes para Mobile */
         @media (max-width: 768px) {
             .section-padding {
-                padding: 3rem 1rem; /* Reduz o padding em mobile */
+                padding: 3rem 1rem;
             }
             .banner-slide { 
-                animation: bannerSlide 12s infinite; /* Aumenta a velocidade em mobile */
+                animation: bannerSlide 12s infinite;
             }
-            .main-banner h1 {
-                font-size: 2.5rem; /* Reduz o tamanho da fonte do H1 em mobile */
+            
+            /* Ajustes específicos para a barra de navegação em mobile */
+            header {
+                height: 50px;
             }
-            .main-banner p {
-                font-size: 1.25rem; /* Reduz o tamanho da fonte do P em mobile */
+            
+            .logo {
+                height: 35px;
             }
+            
             .main-banner {
-                height: 70vh; /* Reduz a altura do banner em mobile */
-                background-position: top center; /* Ajusta o foco da imagem */
-                background-attachment: scroll; /* Garante que não haja 'parallax' indesejado em mobile */
+                margin-top: -50px;
+                padding-top: 50px;
+            }
+            
+            /* Ajustes para o slideshow em mobile */
+            .slideshow-container {
+                height: 60vh;
+            }
+            
+            .slide-content {
+                bottom: 15%;
+                left: 5%;
+                right: 5%;
+                max-width: none;
+            }
+            
+            .slide-title {
+                font-size: 1.8rem;
+            }
+            
+            .slide-description {
+                font-size: 1rem;
+            }
+            
+            .nav-button {
+                width: 35px;
+                height: 35px;
             }
         }
         /* Fim Ajustes para Mobile */
@@ -120,33 +289,8 @@
             height: auto;
         }
         
-        .main-banner h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .main-banner p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .main-banner button {
-            background-color: #c40014;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 0.5rem;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .main-banner button:hover {
-            background-color: #a30010;
-        }
         #mobile-menu {
-        transition: max-height 0.3s ease-in-out;
+            transition: max-height 0.3s ease-in-out;
         }
     </style>
     
@@ -173,10 +317,10 @@
 </head>
 <body class="bg-white font-sans">
     <header class="bg-white shadow-sm fixed w-full top-0 z-50">
-        <nav class="container mx-auto px-4 py-3">
+        <nav class="container mx-auto px-4 py-2">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-3">
-                    <a href="index.html"><img src="img/LOGO-REAÇÃO-PNG-CONTORNO-BRANCO.png" class="w-36 md:w-[150px]"></a>
+                    <a href="index.html"><img src="img/LOGO-REAÇÃO-PNG-CONTORNO-BRANCO.png" class="logo w-36 md:w-[130px]"></a>
                 </div>
                 
                 <div class="hidden md:flex space-x-8">
@@ -229,6 +373,103 @@
             </div>
         </div>
     </div>
+
+    <div class="main-banner">
+        <div class="slideshow-container">
+            <div class="slides" id="slides">
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <img src="img/banner2.png" alt="Colégio Reação - Infraestrutura Completa">
+                    <div class="slide-content">
+                        <h2 class="slide-title" style="color: #0033a0;">Infraestrutura Completa</h2>
+                        <p class="slide-description" style="color: #0033a0;">Ambientes modernos e equipados para o desenvolvimento integral dos alunos.</p>
+                        <button class="slide-button" onclick="scrollToSection('unidades')">Conhecer nossas unidades</button>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <img src="img/banner3.png" alt="Colégio Reação - Matrículas Abertas">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Matrículas 2026 Abertas</h2>
+                        <p class="slide-description">Garanta já a vaga do seu filho em uma das melhores escolas de Brasília.</p>
+                        <button class="slide-button" onclick="scrollToSection('matriculas')">Saiba mais</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Controles de navegação -->
+            <div class="slideshow-nav">
+                <button class="nav-button prev-button" onclick="prevSlide()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="#0033a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="nav-button next-button" onclick="nextSlide()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="#0033a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Indicadores de slide -->
+            <div class="slideshow-controls">
+                <div class="control-dot active" onclick="goToSlide(0)"></div>
+                <div class="control-dot" onclick="goToSlide(1)"></div>
+                <div class="control-dot" onclick="goToSlide(2)"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resto do conteúdo permanece igual -->
+    <section id="home">
+        <div class="section-padding bg-reacao-light-blue">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-reacao-blue mb-4">Colégio Reação</h3>
+                    <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                        Há mais de duas décadas formando cidadãos preparados para os desafios do futuro. 
+                        Nossa metodologia inovadora combina tradição educacional com tecnologia moderna, 
+                        proporcionando um ambiente acolhedor e familiar onde cada aluno é valorizado.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="text-center p-8 bg-white rounded-xl shadow-md card-hover">
+                        <div class="w-20 h-20 bg-gradient-to-br from-reacao-red to-reacao-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <span class="text-white text-3xl">🎓</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-reacao-blue mb-4">Excelência Acadêmica</h4>
+                        <p class="text-gray-600">Metodologia comprovada com resultados excepcionais em vestibulares e ENEM</p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-white rounded-xl shadow-md card-hover">
+                        <div class="w-20 h-20 bg-gradient-to-br from-reacao-blue to-reacao-red rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <span class="text-white text-3xl">👨‍👩‍👧‍👦</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-reacao-blue mb-4">Ambiente Familiar</h4>
+                        <p class="text-gray-600">Acolhimento e cuidado personalizado para o desenvolvimento integral de cada aluno</p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-white rounded-xl shadow-md card-hover">
+                        <div class="w-20 h-20 bg-gradient-to-br from-reacao-red to-reacao-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <span class="text-white text-3xl">💡</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-reacao-blue mb-4">Inovação Pedagógica</h4>
+                        <p class="text-gray-600">Metodologias ativas e tecnologia educacional para preparar para o futuro</p>
+                    </div>
+                </div>
+                
+                <div class="text-center flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <button onclick="scrollToSection('unidades')" class="bg-reacao-blue text-white px-8 py-4 rounded-lg hover:bg-blue-800 transition-colors shadow-lg font-medium">
+                        Conhecer Unidade I - Recanto das Emas
+                    </button>
+                    <button onclick="scrollToSection('unidades')" class="bg-reacao-red text-white px-8 py-4 rounded-lg hover:bg-red-800 transition-colors shadow-lg font-medium">
+                        Conhecer Unidade II - Recanto das Emas
+                    </button>
+                </div>
+            </div>
+        </div>
 
     <div class="main-banner">
         <img src="img/bannerprincipal.png" class="w-full">
@@ -788,7 +1029,7 @@
             bubble.innerHTML = `<p>${message}</p>`;
             
             messageDiv.appendChild(bubble);
-            
+
             const time = document.createElement('p');
             time.className = `text-xs text-gray-500 mt-1 ${isUser ? 'text-right' : ''}`;
             time.textContent = 'Agora';
@@ -797,6 +1038,100 @@
             chatMessages.appendChild(messageDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth Scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        // Adicionar classe quando a página é rolada
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        // Slideshow functionality
+        let currentSlide = 0;
+        const totalSlides = 2;
+        let slideInterval;
+        
+        function updateSlidePosition() {
+            const slides = document.getElementById('slides');
+            slides.style.transform = `translateX(-${currentSlide * 33.333}%)`;
+            
+            // Atualizar indicadores
+            const dots = document.querySelectorAll('.control-dot');
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlidePosition();
+            resetInterval();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlidePosition();
+            resetInterval();
+        }
+        
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateSlidePosition();
+            resetInterval();
+        }
+        
+        function startSlideInterval() {
+            slideInterval = setInterval(nextSlide, 5000); // Muda a cada 5 segundos
+        }
+        
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startSlideInterval();
+        }
+        
+        // Iniciar o slideshow automático
+        startSlideInterval();
+        
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth Scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        // Adicionar classe quando a página é rolada
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
         
         // Contact Form Submission
         // Nota: O formulário foi removido na seção de contato (Contato Section > Falar com Mila), 
@@ -812,6 +1147,3 @@
     </script>
 </body>
 </html>
-
-
-
