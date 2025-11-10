@@ -33,6 +33,14 @@
             font-family: 'Inter', sans-serif;
             box-sizing: border-box;
         }
+        /* Corrige a barra de navegação no mobile */
+        nav.navbar {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999 !important;
+        }
         
         .hero-gradient {
             background: linear-gradient(135deg, #c40014 0%, #0033a0 100%);
@@ -110,7 +118,7 @@
         }
         
         .logo {
-            height: 40px;
+            height: 100px;
             width: auto;
         }
         
@@ -278,6 +286,7 @@
                 height: 35px;
             }
         }
+        
         /* Fim Ajustes para Mobile */
         
         .main-banner {
@@ -291,6 +300,93 @@
         #mobile-menu {
             transition: max-height 0.3s ease-in-out;
         }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+    }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366, #128C7E);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse 2s infinite;
+    }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    }
+
+        .whatsapp-btn img {
+            width: 34px;
+            height: 34px;
+    }
+
+        .whatsapp-menu {
+            display: none;
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            width: 250px;
+            animation: fadeIn 0.3s ease;
+    }
+
+        .whatsapp-menu a {
+            display: block;
+            padding: 14px 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+    }
+
+        .whatsapp-menu a:first-child {
+            border-bottom: 1px solid #eee;
+    }
+
+        .whatsapp-menu a:hover {
+            background-color: #f9f9f9;
+    }
+
+        .unidade-1 {
+            color: #0033a0;
+    }
+
+        .unidade-2 {
+            color: #c40014;
+    }
+
+        /* Animações */
+        @keyframes pulse {
+            0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+            50% {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
     </style>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -315,11 +411,11 @@
     </script>
 </head>
 <body class="bg-white font-sans">
-    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
-        <nav class="container mx-auto px-4 py-2">
+    <header class="bg-white shadow-sm w-full">
+        <nav class="container mx-auto">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <a href="index.html"><img src="img/LOGO-REAÇÃO-PNG-CONTORNO-BRANCO.png" class="logo w-36 md:w-[130px]"></a>
+                <div class="flex items-center">
+                    <a href="index.html"><img src="img/LOGO-REAÇÃO-PNG-CONTORNO-BRANCO-NATAL.png" class="logo"></a>
                 </div>
                 
                 <div class="hidden md:flex space-x-8">
@@ -328,6 +424,7 @@
                     <a href="#unidades" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Unidades</a>
                     <a href="#matriculas" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Matrículas 2026</a>
                     <a href="#contato" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Contato</a>
+                    <a href="trabalheconosco.html" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Trabalhe Conosco</a>
                 </div>
                 
                 <button id="mobile-menu-btn" class="md:hidden text-gray-700">
@@ -343,6 +440,7 @@
                 <a href="#unidades" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Unidades</a>
                 <a href="#matriculas" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Matrículas 2026</a>
                 <a href="#contato" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Contato</a>
+                <a href="trabalheconosco.html" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Trabalhe Conosco</a>
             </div>
         </nav>
     </header>
@@ -351,17 +449,17 @@
             <div class="slides" id="slides">
                 <!-- Slide 2 -->
                 <div class="slide">
-                    <img src="img/banner2.jpg" alt="Colégio Reação - Infraestrutura Completa">
+                    <img src="img/banner2-natal.jpg" alt="Colégio Reação - Infraestrutura Completa">
                     <div class="slide-content">
-                        <h2 class="slide-title" style="color: #0033a0;">Infraestrutura Completa</h2>
-                        <p class="slide-description" style="color: #0033a0;">Ambientes modernos e equipados para o desenvolvimento integral dos alunos.</p>
-                        <button class="slide-button" onclick="scrollToSection('unidades')">Conhecer nossas unidades</button>
+                        <h2 class="slide-title" style="color: #fff;">Infraestrutura Completa</h2>
+                        <p class="slide-description" style="color: #fff;">Ambientes modernos e equipados para o desenvolvimento integral dos alunos.</p>
+                        <button class="slide-button" onclick="scrollToSection('unidades')" style="background-color: #0033a0; color: #fff;">Conhecer nossas unidades</button>
                     </div>
                 </div>
                 
                 <!-- Slide 3 -->
                 <div class="slide">
-                    <img src="img/banner3.jpg" alt="Colégio Reação - Matrículas Abertas">
+                    <img src="img/banner3-natal.jpg" alt="Colégio Reação - Matrículas Abertas">
                     <div class="slide-content">
                         <h2 class="slide-title">Matrículas 2026 Abertas</h2>
                         <p class="slide-description">Garanta já a vaga do seu filho em uma das melhores escolas de Brasília.</p>
@@ -443,7 +541,7 @@
         </div>
 
     <div class="main-banner">
-        <img src="img/bannerprincipal.jpg" class="w-full">
+        <img src="img/bannerprincipal-natal.jpg" class="w-full">
     </div>
 
     <section id="sobre" class="section-padding">
@@ -596,7 +694,7 @@
                     <div class="mb-6 rounded-xl overflow-hidden shadow-md">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15348.323306718821!2d-47.8839!3d-15.7801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2cda11269d0f%3A0xa1c5b52543482ca9!2zQ29sw6lnaW8gUmVhw6fDo28!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    <a href="https://wa.me/5561996410987?text=Quero%20mais%20informa%C3%A7%C3%B5es..."><button onclick="scrollToSection('contato')" class="w-full bg-reacao-blue text-white py-4 rounded-xl font-semibold hover:bg-blue-800 transition-colors shadow-lg">
+                    <a href="https://wa.me/5561996410987"><button onclick="scrollToSection('contato')" class="w-full bg-reacao-blue text-white py-4 rounded-xl font-semibold hover:bg-blue-800 transition-colors shadow-lg">
                         Entre em contato pelo whatsapp
                     </button></a>
                 </div>
@@ -626,7 +724,7 @@
                     <div class="mb-6 rounded-xl overflow-hidden shadow-md">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15348.323306718821!2d-47.9178!3d-15.8267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2ce7021f85bb%3A0x5bc8f50757d27e60!2zQ29sw6lnaW8gUmVhw6fDo28!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    <a href="https://wa.me/5561998306988?text=Quero%20mais%20informa%C3%A7%C3%B5es..."><button onclick="scrollToSection('contato')" class="w-full bg-reacao-red text-white py-4 rounded-xl font-semibold hover:bg-red-800 transition-colors shadow-lg">
+                    <a href="https://wa.me/5561999498886"><button onclick="scrollToSection('contato')" class="w-full bg-reacao-red text-white py-4 rounded-xl font-semibold hover:bg-red-800 transition-colors shadow-lg">
                         Entre em contato pelo whatsapp
                     </button></a>
                 </div>
@@ -789,6 +887,7 @@
                                 <div>
                                     <h4 class="font-semibold text-gray-800">Horário de Atendimento</h4>
                                     <p class="text-gray-700">Segunda a sexta: 7h30 às 18h</p>
+                                    <p class="text-gray-700">Sábado: 8h às 12h</p>
                                 </div>
                             </div>
                             
@@ -798,8 +897,8 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold text-gray-800">Endereços</h4>
-                                    <a href="https://maps.app.goo.gl/jPrEhWpxSAtLhEPq5"><p class="text-gray-700 mb-2">Unidade I: Quadra 206 - Recanto das Emas</p></a>
-                                    <a href="https://maps.app.goo.gl/t7Fixsj7ZocbeF2M8"><p class="text-gray-700">Unidade II: Quadra 201, Lote 08, Av. Buriti - Recanto das Emas</p></a>
+                                    <a href="https://maps.app.goo.gl/jPrEhWpxSAtLhEPq5"><p class="text-gray-700 mb-2">Unidade I: Quadra 206, Conjunto 02, Lote 01 - Recanto das Emas</p></a>
+                                    <a href="https://maps.app.goo.gl/t7Fixsj7ZocbeF2M8"><p class="text-gray-700">Unidade II: Quadra 201, Conjunto 01, Lote 05 - Recanto das Emas</p></a>
                                 </div>
                             </div>
                         </div>
@@ -825,7 +924,7 @@
                 <div class="bg-white p-8 rounded-2xl shadow-lg">
                     <h3 class="text-2xl font-bold text-reacao-blue mb-6">Conheça nossa assistente virtual!</h3>
                         <div class="flex justify-center mb-6">
-                            <img src="img/mika.png" class="max-w-xs w-2/3 md:w-auto" alt="Mika, a assistente virtual">
+                            <img src="img/mila-natal.png" class="max-w-xs w-2/3 md:w-auto" alt="Mika, a assistente virtual">
                         </div>
                         <a href="chatbot.html"><button type="submit" class="w-full bg-reacao-blue text-white py-4 rounded-xl font-bold hover:bg-blue-800 transition-colors shadow-lg">
                             Falar com Mila!
@@ -860,6 +959,7 @@
                         <li><a href="#unidades" class="text-gray-300 hover:text-white transition-colors">Unidades</a></li>
                         <li><a href="#matriculas" class="text-gray-300 hover:text-white transition-colors">Matrículas 2026</a></li>
                         <li><a href="#contato" class="text-gray-300 hover:text-white transition-colors">Contato</a></li>
+                        <li><a href="trabalheconosco.html" class="text-gray-300 hover:text-white transition-colors">Trabalho Conosco</a></li>
                     </ul>
                 </div>
                 
@@ -877,6 +977,23 @@
             </div>
         </div>
     </footer>
+    <!-- Botão Flutuante do WhatsApp (duas unidades) -->
+   <div class="whatsapp-float">
+  <div id="open-whatsapp-menu" class="whatsapp-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </div>
+
+  <div id="whatsapp-menu" class="whatsapp-menu">
+    <a href="https://wa.me/5561996410987" 
+       target="_blank" class="unidade-1">
+       Falar com a Unidade I
+    </a>
+    <a href="https://wa.me/5561999498886" 
+       target="_blank" class="unidade-2">
+       Falar com a Unidade II
+    </a>
+  </div>
+</div>
 
     <script>
         // Mobile Menu Toggle
@@ -1008,6 +1125,21 @@
                 header.classList.remove('scrolled');
             }
         });
+        const btn = document.getElementById('open-whatsapp-menu');
+  const menu = document.getElementById('whatsapp-menu');
+  let open = false;
+
+  btn.addEventListener('click', () => {
+    open = !open;
+    menu.style.display = open ? 'block' : 'none';
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!document.querySelector('.whatsapp-float').contains(e.target)) {
+      menu.style.display = 'none';
+      open = false;
+    }
+  });
         
         // Contact Form Submission
         // Nota: O formulário foi removido na seção de contato (Contato Section > Falar com Mila), 
@@ -1023,4 +1155,3 @@
     </script>
 </body>
 </html>
-
