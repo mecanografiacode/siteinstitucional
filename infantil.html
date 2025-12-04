@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação Infantil – Colégio Reação</title>
+    <meta name="description" content="Educação Infantil no Colégio Reação: ambiente acolhedor, pedagógico e humanizado para crianças em Brasília DF. Matrículas abertas.">
+    <link rel="canonical" href="https://www.colegioreacao.com.br/infantil.html">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="apple-mobile-web-app-title" content="Colégio Reação" />
+    <meta name="keywords" content="educação infantil brasília, ensino infantil, berçário, maternal, jardim, colégio infantil, escola infantil, colégio reação infantil, Recanto das Emas">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Educação Infantil – Colégio Reação">
+    <meta property="og:description" content="Educação Infantil no Colégio Reação: ambiente acolhedor, pedagógico e humanizado para crianças em Brasília DF. Matrículas abertas.">
+    <meta property="og:url" content="https://www.colegioreacao.com.br/infantil.html">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'reacao-red': '#c40014',
+                        'reacao-blue': '#0033a0',
+                        'reacao-light-blue': '#e6efff',
+                        'reacao-dark-blue': '#002366'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #c40014 0%, #0033a0 100%);
+        }
+        
+        .section-padding {
+            padding: 5rem 1rem;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Barra de navegação */
+        header {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            height: auto;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+        }
+        
+        .logo {
+            height: 100px;
+            width: auto;
+        }
+        
+        /* Ajustes para Mobile */
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 3rem 1rem;
+            }
+            
+            header {
+                height: 50px;
+            }
+            
+            .logo {
+                height: 35px;
+            }
+        }
+        
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366, #128C7E);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-btn img {
+            width: 34px;
+            height: 34px;
+        }
+
+        .whatsapp-menu {
+            display: none;
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            width: 250px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .whatsapp-menu a {
+            display: block;
+            padding: 14px 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .whatsapp-menu a:first-child {
+            border-bottom: 1px solid #eee;
+        }
+
+        .whatsapp-menu a:hover {
+            background-color: #f9f9f9;
+        }
+
+        .unidade-1 {
+            color: #0033a0;
+        }
+
+        .unidade-2 {
+            color: #c40014;
+        }
+
+        /* Animações */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Colégio Reação - Educação Infantil",
+      "url": "https://colegioreacao.com/infantil.html",
+      "logo": "https://colegioreacao.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Recanto das Emas",
+        "addressRegion": "DF",
+        "addressCountry": "BR"
+      },
+      "sameAs": [
+        "https://www.instagram.com/colegioreacao",
+        "https://www.facebook.com/colegioreacaodf"
+      ]
+    }
+    </script>
+</head>
+<body class="bg-white font-sans">
+    <!-- H1 principal para SEO -->
+    <h1 class="sr-only">Educação Infantil – Colégio Reação Recanto das Emas Brasília DF</h1>
+    
+    <header class="bg-white shadow-sm w-full fixed top-0 left-50 z-50">
+        <nav class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html"><img src="img/LOGO-REAÇÃO-PNG-CONTORNO-BRANCO-NATAL.png" alt="Logo do Colégio Reação Brasília DF" class="logo"></a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Início</a>
+                    <a href="infantil.html" class="text-reacao-red transition-colors font-medium">Educação Infantil</a>
+                    <a href="anosiniciaisefinais.html" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Anos Iniciais e Finais</a>
+                    <a href="ensinomedio.html" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Ensino Médio</a>
+                    <a href="index.html#matriculas" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Matrículas 2026</a>
+                    <a href="index.html#contato" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Contato</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Início</a>
+                <a href="infantil.html" class="block py-2 text-reacao-red font-medium">Educação Infantil</a>
+                <a href="index.html#unidades" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Anos Iniciais e Finais</a>
+                <a href="index.html#matriculas" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Ensino Médio</a>
+                <a href="index.html#matriculas" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Matrículas</a>
+                <a href="index.html#contato" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="pt-24 md:pt-32 bg-gradient-to-r from-reacao-light-blue to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-reacao-blue mb-4">Educação Infantil</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">Um ambiente acolhedor, seguro e estimulante para os primeiros passos na jornada educacional</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <img src="img/infantil1.jpg" alt="Crianças na Educação Infantil do Colégio Reação" class="rounded-2xl shadow-xl w-full h-auto">
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-reacao-red mb-6">O início de uma grande jornada</h3>
+                    <p class="text-gray-700 mb-6 text-lg">
+                        Na Educação Infantil do Colégio Reação, cuidamos com carinho e profissionalismo dos primeiros anos de aprendizado. 
+                        Nossa proposta pedagógica é baseada no desenvolvimento integral da criança, respeitando sua individualidade e 
+                        estimulando suas potencialidades através de experiências significativas.
+                    </p>
+                    <p class="text-gray-700 text-lg">
+                        Acreditamos que os primeiros anos de vida são fundamentais para a formação da personalidade, valores e habilidades 
+                        que acompanharão a criança por toda a vida. Por isso, oferecemos um ambiente seguro, afetivo e rico em estímulos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proposta Pedagógica -->
+    <section class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold text-reacao-blue mb-4">Nossa Proposta Pedagógica</h3>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">Uma abordagem completa que desenvolve potencialidades e forma cidadãos desde os primeiros anos</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="text-center p-8 bg-reacao-light-blue rounded-2xl shadow-md card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-reacao-red to-reacao-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <span class="text-white text-3xl">🧠</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-reacao-blue mb-4">Desenvolvimento Socioemocional</h4>
+                    <p class="text-gray-600">Estimulamos a inteligência emocional, autoestima, empatia e habilidades sociais essenciais para o convívio em grupo.</p>
+                </div>
+                
+                <div class="text-center p-8 bg-reacao-light-blue rounded-2xl shadow-md card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-reacao-blue to-reacao-red rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <span class="text-white text-3xl">💖</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-reacao-blue mb-4">Formação de Valores</h4>
+                    <p class="text-gray-600">Trabalhamos valores como respeito, honestidade, solidariedade e responsabilidade através de atividades cotidianas.</p>
+                </div>
+                
+                <div class="text-center p-8 bg-reacao-light-blue rounded-2xl shadow-md card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-reacao-red to-reacao-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <span class="text-white text-3xl">🤗</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-reacao-blue mb-4">Acolhimento Personalizado</h4>
+                    <p class="text-gray-600">Cada criança é única e recebe atenção individualizada para se sentir segura, amada e confiante no ambiente escolar.</p>
+                </div>
+                
+                <div class="text-center p-8 bg-reacao-light-blue rounded-2xl shadow-md card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-reacao-blue to-reacao-red rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <span class="text-white text-3xl">🎨</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-reacao-blue mb-4">Aprendizagem Lúdica</h4>
+                    <p class="text-gray-600">Através de brincadeiras, jogos e atividades criativas, as crianças aprendem de forma natural e prazerosa.</p>
+                </div>
+                
+                <div class="text-center p-8 bg-reacao-light-blue rounded-2xl shadow-md card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-reacao-red to-reacao-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <span class="text-white text-3xl">👶</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-reacao-blue mb-4">Ensino Personalizado</h4>
+                    <p class="text-gray-600">Respeitamos o ritmo de desenvolvimento de cada criança, oferecendo desafios adequados à sua fase.</p>
+                </div>
+                
+                <div class="text-center p-8 bg-reacao-light-blue rounded-2xl shadow-md card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-reacao-blue to-reacao-red rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <span class="text-white text-3xl">✏️</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-reacao-blue mb-4">Atividades Criativas</h4>
+                    <p class="text-gray-600">Arte, música, contação de histórias e projetos interdisciplinares estimulam a criatividade e expressão.</p>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-reacao-light-blue to-white p-8 md:p-12 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-reacao-blue mb-8 text-center">Rotina do Aluno na Educação Infantil</h3>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-reacao-red mb-3 flex items-center">
+                                <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✓</span>
+                                Chegada e Acolhimento
+                            </h4>
+                            <p class="text-gray-700">Recebimento individualizado, momento de adaptação e atividades de boas-vindas que promovem o vínculo afetivo.</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-reacao-red mb-3 flex items-center">
+                                <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✓</span>
+                                Atividades Pedagógicas
+                            </h4>
+                            <p class="text-gray-700">Projetos temáticos, jogos educativos, linguagem oral e escrita, raciocínio lógico-matemático em contextos significativos.</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-reacao-red mb-3 flex items-center">
+                                <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✓</span>
+                                Momentos de Higiene e Alimentação
+                            </h4>
+                            <p class="text-gray-700">Formação de hábitos saudáveis, autonomia e socialização durante as refeições e cuidados pessoais.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-reacao-red mb-3 flex items-center">
+                                <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✓</span>
+                                Atividades Artísticas e Culturais
+                            </h4>
+                            <p class="text-gray-700">Expressão corporal, musicalização, artes visuais e teatro desenvolvendo a criatividade e sensibilidade artística.</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-reacao-red mb-3 flex items-center">
+                                <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✓</span>
+                                Brincadeiras Livres e Dirigidas
+                            </h4>
+                            <p class="text-gray-700">Espaços e tempos para brincar, essenciais para o desenvolvimento psicomotor, social e cognitivo.</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-reacao-red mb-3 flex items-center">
+                                <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✓</span>
+                                Hora do Descanso e Despedida
+                            </h4>
+                            <p class="text-gray-700">Momento de repouso para as crianças que permanecem em período integral e despedida afetiva ao final do dia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Imagens -->
+<section class="section-padding bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h3 class="text-3xl font-bold text-reacao-blue mb-4">Galeria - Educação Infantil</h3>
+            <p class="text-lg text-gray-700">Espaços especialmente projetados para o desenvolvimento seguro e feliz das crianças</p>
+        </div>
+        
+        <!-- Grid de fotos em 4 colunas no desktop, 2 colunas no mobile -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mb-12">
+            <!-- Imagem 1 -->
+            <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                <img src="img/infantil1.jpg" alt="Atividades lúdicas na Educação Infantil" class="w-full h-48 object-cover">
+            </div>
+            
+            <!-- Imagem 2 -->
+            <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                <img src="img/infantil2.jpg" alt="Sala de aula da Educação Infantil" class="w-full h-48 object-cover">
+            </div>
+            
+            <!-- Imagem 3 -->
+            <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                <img src="img/infantil3.jpg" alt="Parque infantil do Colégio Reação" class="w-full h-48 object-cover">
+            </div>
+            
+            <!-- Imagem 4 -->
+            <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                <img src="img/infantil4.jpg" alt="Refeitório da Educação Infantil" class="w-full h-48 object-cover">
+            </div>
+            
+            <!-- Imagem 5 -->
+            <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                <img src="img/infantil5.jpg" alt="Crianças em atividades artísticas" class="w-full h-48 object-cover">
+            </div>
+            
+            <!-- Imagem 6 -->
+            <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                <img src="img/infantil6.jpg" alt="Hora do conto e leitura" class="w-full h-48 object-cover">
+            </div>
+            
+            <!-- Imagem 7 -->
+            <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                <img src="img/infantil7.jpg" alt="Atividades sensoriais" class="w-full h-48 object-cover">
+            </div>
+            
+            <!-- Imagem 8 -->
+            <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                <img src="img/infantil8.jpg" alt="Brincadeiras ao ar livre" class="w-full h-48 object-cover">
+            </div>
+            
+            <!-- Imagem 9 -->
+            <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                <img src="img/infantil9.jpg" alt="Musicalização infantil" class="w-full h-48 object-cover">
+            </div>
+            
+            <!-- Imagem 10 -->
+            <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                <img src="img/infantil10.jpg" alt="Crianças no parque aquático" class="w-full h-48 object-cover">
+            </div>
+            
+            <!-- Imagem 11 -->
+            <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                <img src="img/infantil11.jpg" alt="Atividades de psicomotricidade" class="w-full h-48 object-cover">
+            </div>
+            
+            <!-- Imagem 12 -->
+            <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                <img src="img/infantil12.jpg" alt="Comemorações e festas" class="w-full h-48 object-cover">
+            </div>
+            
+        </div>
+        
+        <div class="text-center">
+            <a href="index.html#unidades">
+                <button class="bg-reacao-blue text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-800 transition-colors shadow-lg text-lg mr-4">
+                    Conhecer Nossas Unidades
+                </button>
+            </a>
+            <a href="chatbot.html">
+                <button class="bg-reacao-red text-white px-8 py-4 rounded-xl font-bold hover:bg-red-800 transition-colors shadow-lg text-lg">
+                    Matricular Agora
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Faixas Etárias -->
+    <section class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold text-reacao-blue mb-4">Nossas Faixas Etárias</h3>
+                <p class="text-lg text-gray-700">Atendemos crianças a partir de 3 anos, com propostas pedagógicas específicas para cada fase</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-reacao-light-blue to-white p-8 rounded-2xl text-center card-hover shadow-lg border-l-4 border-reacao-blue">
+                    <div class="w-16 h-16 bg-reacao-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl">👶</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-reacao-blue mb-4">Infantil III</h4>
+                    <p class="text-gray-700 mb-4">3 a 4 anos</p>
+                    <p class="text-gray-600">Foco no desenvolvimento psicomotor, linguagem, socialização e formação de hábitos de higiene e alimentação.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-reacao-light-blue to-white p-8 rounded-2xl text-center card-hover shadow-lg border-l-4 border-reacao-red">
+                    <div class="w-16 h-16 bg-reacao-red rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl">🧒</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-reacao-red mb-4">Infantil IV</h4>
+                    <p class="text-gray-700 mb-4">4 anos</p>
+                    <p class="text-gray-600">Ampliação das habilidades sociais, iniciação à leitura e escrita, raciocínio lógico e desenvolvimento da autonomia.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-reacao-light-blue to-white p-8 rounded-2xl text-center card-hover shadow-lg border-l-4 border-reacao-blue">
+                    <div class="w-16 h-16 bg-reacao-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl">👧</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-reacao-blue mb-4">Infantil V</h4>
+                    <p class="text-gray-700 mb-4">5 anos</p>
+                    <p class="text-gray-600">Preparação para o Ensino Fundamental, alfabetização, desenvolvimento do pensamento crítico e resolução de problemas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section-padding hero-gradient text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-6">Pronto para embarcar nessa jornada conosco?</h3>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Agende uma visita e conheça de perto nossa estrutura e proposta pedagógica para a Educação Infantil.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="index.html#contato">
+                    <button class="bg-white text-reacao-blue px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg text-lg">
+                        Agendar Visita
+                    </button>
+                </a>
+                <a href="index.html#matriculas">
+                    <button class="bg-reacao-red text-white px-8 py-4 rounded-xl font-bold hover:bg-red-800 transition-colors shadow-lg text-lg border-2 border-white">
+                        Matricular Agora
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (igual ao index.html) -->
+    <footer class="bg-reacao-dark-blue text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-2 md:col-span-1">
+                    <img src="img/LOGO-REAÇÃO-PNG-CONTORNO-BRANCO.png" class="w-48 md:w-[250px] mb-2" alt="Logo Colégio Reação">
+                    <p class="text-gray-300 text-sm">A jornada de excelência começa aqui.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Nossas Unidades</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <a href="https://maps.app.goo.gl/jPrEhWpxSAtLhEPq5"><li>Unidade I - Quadra 206, Recanto das Emas</li></a>
+                        <a href="https://maps.app.goo.gl/t7Fixsj7ZocbeF2M8"><li>Unidade II - Quadra 201, Lote 07, Av. Buriti - Recanto das Emas</li></a>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="infantil.html" class="text-gray-300 hover:text-white transition-colors">Educação Infantil</a></li>
+                        <li><a href="anosiniciaisefinais.html" class="text-gray-300 hover:text-white transition-colors">Anos Iniciai e Finais</a></li>
+                        <li><a href="ensinomedio.html" class="text-gray-300 hover:text-white transition-colors">Ensino Médio</a></li>
+                        <li><a href="index.html#unidades" class="text-gray-300 hover:text-white transition-colors">Unidades</a></li>
+                        <li><a href="index.html#matriculas" class="text-gray-300 hover:text-white transition-colors">Matrículas 2026</a></li>
+                        <li><a href="index.html#contato" class="text-gray-300 hover:text-white transition-colors">Contato</a></li>
+                        <li><a href="https://forms.gle/geiuVgyPuSSzTYSr9" class="text-gray-300 hover:text-white transition-colors">Trabalho Conosco</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <a href="tel:+556133331434"><li>Unidade I: (61) 3333-1434</li></a>
+                        <a href="tel:+556133333332"><li>Unidade II: (61) 33333332</li></a>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+                <p>© 2025 Colégio Reação. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <div class="whatsapp-float">
+        <div id="open-whatsapp-menu" class="whatsapp-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp do Colégio Reação">
+        </div>
+
+        <div id="whatsapp-menu" class="whatsapp-menu">
+            <a href="https://wa.me/5561996410987" 
+               target="_blank" class="unidade-1">
+               Falar com a Unidade I
+            </a>
+            <a href="https://wa.me/5561999498886" 
+               target="_blank" class="unidade-2">
+               Falar com a Unidade II
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth Scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        // Adicionar classe quando a página é rolada
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // WhatsApp Menu
+        const btn = document.getElementById('open-whatsapp-menu');
+        const menu = document.getElementById('whatsapp-menu');
+        let open = false;
+
+        btn.addEventListener('click', () => {
+            open = !open;
+            menu.style.display = open ? 'block' : 'none';
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!document.querySelector('.whatsapp-float').contains(e.target)) {
+                menu.style.display = 'none';
+                open = false;
+            }
+        });
+    </script>
+</body>
+</html>

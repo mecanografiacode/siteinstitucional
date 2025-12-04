@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensino Médio – Colégio Reação</title>
+    <meta name="description" content="Ensino Médio no Colégio Reação: formação completa, preparação para vestibulares, ENEM e PAS, e desenvolvimento crítico e intelectual em Brasília DF.">
+    <link rel="canonical" href="https://www.colegioreacao.com.br/medio.html">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="apple-mobile-web-app-title" content="Colégio Reação" />
+    <meta name="keywords" content="ensino médio brasília, preparação para vestibular, ENEM, PAS, orientação vocacional, colégio reação ensino médio, Recanto das Emas, 1º ano ensino médio, 2º ano ensino médio, 3º ano ensino médio">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Ensino Médio – Colégio Reação">
+    <meta property="og:description" content="Ensino Médio no Colégio Reação: formação completa, preparação para vestibulares, ENEM e PAS, e desenvolvimento crítico e intelectual em Brasília DF.">
+    <meta property="og:url" content="https://www.colegioreacao.com.br/medio.html">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'reacao-red': '#c40014',
+                        'reacao-blue': '#0033a0',
+                        'reacao-light-blue': '#e6efff',
+                        'reacao-dark-blue': '#002366'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #c40014 0%, #0033a0 100%);
+        }
+        
+        .section-padding {
+            padding: 5rem 1rem;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Barra de navegação */
+        header {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            height: auto;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+        }
+        
+        .logo {
+            height: 100px;
+            width: auto;
+        }
+        
+        /* Ajustes para Mobile */
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 3rem 1rem;
+            }
+            
+            header {
+                height: 50px;
+            }
+            
+            .logo {
+                height: 35px;
+            }
+        }
+        
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366, #128C7E);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-btn img {
+            width: 34px;
+            height: 34px;
+        }
+
+        .whatsapp-menu {
+            display: none;
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            width: 250px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .whatsapp-menu a {
+            display: block;
+            padding: 14px 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .whatsapp-menu a:first-child {
+            border-bottom: 1px solid #eee;
+        }
+
+        .whatsapp-menu a:hover {
+            background-color: #f9f9f9;
+        }
+
+        .unidade-1 {
+            color: #0033a0;
+        }
+
+        .unidade-2 {
+            color: #c40014;
+        }
+
+        /* Animações */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Colégio Reação - Ensino Médio",
+      "url": "https://colegioreacao.com/medio.html",
+      "logo": "https://colegioreacao.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Recanto das Emas",
+        "addressRegion": "DF",
+        "addressCountry": "BR"
+      },
+      "sameAs": [
+        "https://www.instagram.com/colegioreacao",
+        "https://www.facebook.com/colegioreacaodf"
+      ]
+    }
+    </script>
+</head>
+<body class="bg-white font-sans">
+    <!-- H1 principal para SEO -->
+    <h1 class="sr-only">Ensino Médio – Formação para o Futuro Colégio Reação Recanto das Emas Brasília DF</h1>
+    
+    <header class="bg-white shadow-sm w-full fixed top-0 left-50 z-50">
+        <nav class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html"><img src="img/LOGO-REAÇÃO-PNG-CONTORNO-BRANCO-NATAL.png" alt="Logo do Colégio Reação Brasília DF" class="logo"></a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Início</a>
+                    <a href="infantil.html" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Educação Infantil</a>
+                    <a href="anosiniciaisefinais.html" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Anos Iniciais e Finais</a>
+                    <a href="medio.html" class="text-reacao-red transition-colors font-medium">Ensino Médio</a>
+                    <a href="index.html#matriculas" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Matrículas 2026</a>
+                    <a href="index.html#contato" class="text-gray-700 hover:text-reacao-red transition-colors font-medium">Contato</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Início</a>
+                <a href="infantil.html" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Educação Infantil</a>
+                <a href="anosiniciaisefinais.html" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Anos Iniciais e Finais</a>
+                <a href="medio.html" class="block py-2 text-reacao-red font-medium">Ensino Médio</a>
+                <a href="index.html#matriculas" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Matrículas</a>
+                <a href="index.html#contato" class="block py-2 text-gray-700 hover:text-reacao-red font-medium">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="pt-24 md:pt-32 bg-gradient-to-r from-reacao-light-blue to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-reacao-blue mb-4">Ensino Médio</h2>
+                <h3 class="text-2xl md:text-3xl text-reacao-red mb-4">Formação para o Futuro</h3>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">Preparação completa para vestibulares, ENEM, PAS e desenvolvimento crítico e intelectual para os desafios do mundo contemporâneo</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <img src="img/ensinomedio.jpg" alt="Estudantes do Ensino Médio do Colégio Reação em aula" class="rounded-2xl shadow-xl w-full h-auto">
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-reacao-red mb-6">Formação integral para os grandes desafios acadêmicos e da vida</h3>
+                    <p class="text-gray-700 mb-6 text-lg">
+                        No Ensino Médio do Colégio Reação, combinamos excelência acadêmica com formação humana, 
+                        preparando estudantes para os vestibulares mais concorridos, ENEM, PAS e para a vida universitária. 
+                        Nossa metodologia integra aprofundamento disciplinar, orientação vocacional e desenvolvimento de 
+                        autonomia intelectual.
+                    </p>
+                    <p class="text-gray-700 text-lg">
+                        Acompanhamos cada aluno de perto, oferecendo suporte pedagógico individualizado, simulados periódicos 
+                        e incentivo à maturidade acadêmica, formando bases sólidas para o futuro profissional e pessoal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilares Educacionais -->
+    <section class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold text-reacao-blue mb-4">Nossos Pilares Educacionais</h3>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">Uma abordagem completa que desenvolve potencialidades acadêmicas, humanas e prepara para o futuro</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="text-center p-8 bg-reacao-light-blue rounded-2xl shadow-md card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-reacao-red to-reacao-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <span class="text-white text-3xl">🎓</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-reacao-blue mb-4">Formação Acadêmica Avançada</h4>
+                    <p class="text-gray-600">Aprofundamento em Física, Química, Biologia, Matemática, Redação e Ciências Humanas com foco crítico e científico.</p>
+                </div>
+                
+                <div class="text-center p-8 bg-reacao-light-blue rounded-2xl shadow-md card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-reacao-blue to-reacao-red rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <span class="text-white text-3xl">📚</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-reacao-blue mb-4">Preparação para Vestibulares</h4>
+                    <p class="text-gray-600">Preparação completa para ENEM, PAS e principais vestibulares com simulados, revisões e técnicas de estudo eficazes.</p>
+                </div>
+                
+                <div class="text-center p-8 bg-reacao-light-blue rounded-2xl shadow-md card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-reacao-red to-reacao-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <span class="text-white text-3xl">🧠</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-reacao-blue mb-4">Orientação Vocacional</h4>
+                    <p class="text-gray-600">Apoio na escolha de áreas profissionais, atividades de descoberta vocacional e informação sobre universidades e cursos.</p>
+                </div>
+                
+                <div class="text-center p-8 bg-reacao-light-blue rounded-2xl shadow-md card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-reacao-blue to-reacao-red rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <span class="text-white text-3xl">🚀</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-reacao-blue mb-4">Autonomia e Maturidade</h4>
+                    <p class="text-gray-600">Estímulo à responsabilidade, organização e independência nos estudos, preparando para a vida acadêmica e profissional.</p>
+                </div>
+                
+                <div class="text-center p-8 bg-reacao-light-blue rounded-2xl shadow-md card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-reacao-red to-reacao-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <span class="text-white text-3xl">👨‍🏫</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-reacao-blue mb-4">Acompanhamento Individualizado</h4>
+                    <p class="text-gray-600">Monitoramento personalizado do desenvolvimento, reforço direcionado e comunicação constante com as famílias.</p>
+                </div>
+                
+                <div class="text-center p-8 bg-reacao-light-blue rounded-2xl shadow-md card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-reacao-blue to-reacao-red rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <span class="text-white text-3xl">🔬</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-reacao-blue mb-4">Ciência e Pensamento Crítico</h4>
+                    <p class="text-gray-600">Desenvolvimento do pensamento científico, filosófico e crítico para análise e resolução de problemas complexos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais do Ensino Médio -->
+    <section class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold text-reacao-blue mb-4">Diferenciais do Nosso Ensino Médio</h3>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">Uma formação completa que prepara para os desafios acadêmicos e para a vida</p>
+            </div>
+            
+            <!-- Preparação para Vestibulares -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="order-2 md:order-1">
+                    <div class="inline-flex items-center mb-6">
+                        <div class="w-12 h-12 bg-reacao-blue rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white text-2xl">📚</span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-reacao-blue">Preparação para ENEM e Vestibulares</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6 text-lg">
+                        Programa intensivo de preparação com <strong>simulados periódicos</strong> no formato ENEM e principais vestibulares, 
+                        acompanhamento detalhado de desempenho, aulas de revisão estratégicas e ensino de técnicas de estudo eficazes.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <span class="bg-reacao-blue text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-gray-700"><strong>Simulados bimestrais:</strong> Com correção TRI e análise de desempenho individualizada.</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-reacao-blue text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-gray-700"><strong>Revisões intensivas:</strong> Aulas focadas em conteúdos mais cobrados e temas recorrentes.</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-reacao-blue text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-gray-700"><strong>Técnicas de redação:</strong> Produção e correção de textos com base nas competências do ENEM.</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-reacao-blue text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-gray-700"><strong>Plantão de dúvidas:</strong> Atendimento individualizado para resolução de questões específicas.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2">
+                    <img src="img/tcc.jpg" alt="Estudantes do Ensino Médio em simulado ENEM" class="rounded-2xl shadow-xl w-full h-auto">
+                </div>
+            </div>
+            
+            <!-- Orientação Vocacional -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <img src="img/tcc2.jpg" alt="Orientação vocacional com estudantes do Ensino Médio" class="rounded-2xl shadow-xl w-full h-auto">
+                </div>
+                
+                <div>
+                    <div class="inline-flex items-center mb-6">
+                        <div class="w-12 h-12 bg-reacao-red rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white text-2xl">🧠</span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-reacao-red">Orientação de Carreira e Vocacional</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6 text-lg">
+                        Programa de <strong>orientação vocacional</strong> que auxilia o estudante na descoberta de suas aptidões, 
+                        interesses e potencialidades, oferecendo informações sobre o mercado de trabalho, cursos superiores 
+                        e universidades.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-gray-700"><strong>Testes vocacionais:</strong> Instrumentos validados para identificação de perfis e interesses profissionais.</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-gray-700"><strong>Palestras com profissionais:</strong> Contato com diferentes áreas de atuação e realidades do mercado.</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-gray-700"><strong>Visitas a universidades:</strong> Conhecimento in loco de instituições de ensino superior e sua estrutura.</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-reacao-red text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-gray-700"><strong>Informação sobre cursos:</strong> Dados atualizados sobre graduações, áreas de atuação e tendências do mercado.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Formação Humana e Cidadã -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="inline-flex items-center mb-6">
+                        <div class="w-12 h-12 bg-reacao-blue rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white text-2xl">✏️</span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-reacao-blue">Formação Humana e Cidadania</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6 text-lg">
+                        Desenvolvimento integral que vai além dos conteúdos acadêmicos, formando jovens <strong>éticos, responsáveis 
+                        e conscientes</strong> de seu papel na sociedade, com habilidades socioemocionais essenciais para a vida adulta.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <span class="bg-reacao-blue text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-gray-700"><strong>Ética e valores humanos:</strong> Discussões sobre moral, justiça, respeito e responsabilidade social.</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-reacao-blue text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-gray-700"><strong>Inteligência emocional:</strong> Desenvolvimento de autoconhecimento, empatia e resiliência.</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-reacao-blue text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-gray-700"><strong>Projetos sociais:</strong> Engajamento em ações comunitárias e voluntariado.</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-reacao-blue text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-gray-700"><strong>Debates contemporâneos:</strong> Discussão de temas atuais e relevantes para a formação cidadã.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2">
+                    <img src="img/tcc3.jpg" alt="Debate entre estudantes do Ensino Médio" class="rounded-2xl shadow-xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Imagens -->
+    <section class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-reacao-blue mb-4">Galeria - Ensino Médio</h3>
+                <p class="text-lg text-gray-700">Ambientes de aprendizagem, atividades pedagógicas e momentos de preparação para o futuro</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mb-12">
+                <!-- Imagens do Ensino Médio -->
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio5.jpg" alt="Aula de laboratório de química" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio6.jpg" alt="Aula de física experimental" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio7.jpg" alt="Estudantes em aula de redação" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio8.jpg" alt="Revisão para vestibulares" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio9.jpg" alt="Oficina de orientação vocacional" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio10.jpg" alt="Simulado ENEM em sala de aula" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio11.jpg" alt="Estudantes em debate filosófico" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio12.jpg" alt="Aula de matemática avançada" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio13.jpg" alt="Visita a feira de universidades" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio14.jpg" alt="Estudantes em estudo em grupo" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio15.jpg" alt="Aula de biologia com microscópio" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio16.jpg" alt="Palestra com profissional convidado" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio17.jpg" alt="Projeto de pesquisa científica" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio18.jpg" alt="Aula de história contemporânea" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio19.jpg" alt="Estudantes em atividade esportiva" class="w-full h-48 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="img/medio20.jpg" alt="Formatura do Ensino Médio" class="w-full h-48 object-cover">
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="index.html#unidades">
+                    <button class="bg-reacao-blue text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-800 transition-colors shadow-lg text-lg mr-4">
+                        Conhecer Nossas Unidades
+                    </button>
+                </a>
+                <a href="index.html#matriculas">
+                    <button class="bg-reacao-red text-white px-8 py-4 rounded-xl font-bold hover:bg-red-800 transition-colors shadow-lg text-lg">
+                        Matricular Agora
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section-padding hero-gradient text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-6">Prepare seu filho para os maiores desafios acadêmicos</h3>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Do 1º ao 3º ano do Ensino Médio, oferecemos a formação completa necessária para o sucesso nos vestibulares e na vida universitária.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="index.html#contato">
+                    <button class="bg-white text-reacao-blue px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg text-lg">
+                        Agendar Visita
+                    </button>
+                </a>
+                <a href="index.html#matriculas">
+                    <button class="bg-reacao-red text-white px-8 py-4 rounded-xl font-bold hover:bg-red-800 transition-colors shadow-lg text-lg border-2 border-white">
+                        Matricular Agora
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (idêntico ao infantil.html) -->
+    <footer class="bg-reacao-dark-blue text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-2 md:col-span-1">
+                    <img src="img/LOGO-REAÇÃO-PNG-CONTORNO-BRANCO.png" class="w-48 md:w-[250px] mb-2" alt="Logo Colégio Reação">
+                    <p class="text-gray-300 text-sm">A jornada de excelência começa aqui.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Nossas Unidades</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <a href="https://maps.app.goo.gl/jPrEhWpxSAtLhEPq5"><li>Unidade I - Quadra 206, Recanto das Emas</li></a>
+                        <a href="https://maps.app.goo.gl/t7Fixsj7ZocbeF2M8"><li>Unidade II - Quadra 201, Lote 07, Av. Buriti - Recanto das Emas</li></a>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="infantil.html" class="text-gray-300 hover:text-white transition-colors">Educação Infantil</a></li>
+                        <li><a href="anosiniciaisefinais.html" class="text-gray-300 hover:text-white transition-colors">Anos Iniciais e Finais</a></li>
+                        <li><a href="medio.html" class="text-gray-300 hover:text-white transition-colors">Ensino Médio</a></li>
+                        <li><a href="index.html#unidades" class="text-gray-300 hover:text-white transition-colors">Unidades</a></li>
+                        <li><a href="index.html#matriculas" class="text-gray-300 hover:text-white transition-colors">Matrículas 2026</a></li>
+                        <li><a href="index.html#contato" class="text-gray-300 hover:text-white transition-colors">Contato</a></li>
+                        <li><a href="https://forms.gle/geiuVgyPuSSzTYSr9" class="text-gray-300 hover:text-white transition-colors">Trabalho Conosco</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <a href="tel:+556133331434"><li>Unidade I: (61) 3333-1434</li></a>
+                        <a href="tel:+556133333332"><li>Unidade II: (61) 33333332</li></a>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+                <p>© 2025 Colégio Reação. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <div class="whatsapp-float">
+        <div id="open-whatsapp-menu" class="whatsapp-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp do Colégio Reação">
+        </div>
+
+        <div id="whatsapp-menu" class="whatsapp-menu">
+            <a href="https://wa.me/5561996410987" 
+               target="_blank" class="unidade-1">
+               Falar com a Unidade I
+            </a>
+            <a href="https://wa.me/5561999498886" 
+               target="_blank" class="unidade-2">
+               Falar com a Unidade II
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth Scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        // Adicionar classe quando a página é rolada
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // WhatsApp Menu
+        const btn = document.getElementById('open-whatsapp-menu');
+        const menu = document.getElementById('whatsapp-menu');
+        let open = false;
+
+        btn.addEventListener('click', () => {
+            open = !open;
+            menu.style.display = open ? 'block' : 'none';
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!document.querySelector('.whatsapp-float').contains(e.target)) {
+                menu.style.display = 'none';
+                open = false;
+            }
+        });
+    </script>
+</body>
+</html>
